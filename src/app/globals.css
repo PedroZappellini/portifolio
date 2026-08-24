@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0f;
+  --background-elevated: #101018;
+  --surface: #14141d;
+  --surface-hover: #191924;
+  --surface-border: #26262f;
+  --foreground: #f4f4f6;
+  --muted: #9a9aa8;
+  --muted-foreground: #6f6f7d;
+  --accent: #6366f1;
+  --accent-2: #22d3ee;
+  --accent-foreground: #ffffff;
+  --success: #34d399;
+  --danger: #f87171;
+  --ring: rgba(99, 102, 241, 0.5);
+}
+
+[data-theme="light"] {
+  --background: #fafafa;
+  --background-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #f4f4f6;
+  --surface-border: #e6e6ea;
+  --foreground: #16161d;
+  --muted: #55555f;
+  --muted-foreground: #85858f;
+  --accent: #4f46e5;
+  --accent-2: #0891b2;
+  --accent-foreground: #ffffff;
+  --success: #059669;
+  --danger: #dc2626;
+  --ring: rgba(79, 70, 229, 0.35);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-border: var(--surface-border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --font-sans:
+    "Inter Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
