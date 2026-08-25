@@ -1,0 +1,31 @@
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#0891b2" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="800" height="480" fill="url(#grad)" />
+  <rect width="800" height="480" fill="url(#grid)" />
+  <g transform="translate(200,80) scale(1.15)">
+    
+    <g fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.4)" stroke-width="2">
+      <rect x="60" y="130" width="90" height="60" rx="12" />
+      <rect x="205" y="70" width="90" height="60" rx="12" />
+      <rect x="205" y="190" width="90" height="60" rx="12" />
+      <rect x="350" y="130" width="90" height="60" rx="12" />
+    </g>
+    <g stroke="white" stroke-width="3" fill="none" opacity="0.8" stroke-linecap="round">
+      <path d="M150,160 L205,100" />
+      <path d="M150,160 L205,220" />
+      <path d="M295,100 L350,160" />
+      <path d="M295,220 L350,160" />
+    </g>
+  
+  </g>
+  <text x="48" y="420" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="white" opacity="0.95">API de Automação</text>
+  <text x="48" y="448" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.75)">Sample project cover — replace in /public/projects</text>
+</svg>

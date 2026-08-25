@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "../components/header";
+import "@fontsource-variable/inter";
+import { Header } from "../components/layout/header";
+import AppProvider from "../contexts/appProvider";
+import { Footer } from "../components/layout/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,8 +14,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={"h-full antialiased"}>
       <body className="min-h-full flex flex-col">
-        <Header />
-        <main>{children}</main>
+        <AppProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </AppProvider>
       </body>
     </html>
   );

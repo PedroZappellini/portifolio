@@ -1,0 +1,28 @@
+<svg width="800" height="480" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4338ca" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="800" height="480" fill="url(#grad)" />
+  <rect width="800" height="480" fill="url(#grid)" />
+  <g transform="translate(200,80) scale(1.15)">
+    
+    <rect x="60" y="90" width="360" height="150" rx="14" fill="rgba(255,255,255,0.12)" />
+    <g opacity="0.9">
+      <rect x="90" y="180" width="24" height="40" rx="4" fill="white" />
+      <rect x="130" y="150" width="24" height="70" rx="4" fill="white" />
+      <rect x="170" y="120" width="24" height="100" rx="4" fill="white" />
+      <rect x="210" y="160" width="24" height="60" rx="4" fill="white" />
+      <rect x="250" y="100" width="24" height="120" rx="4" fill="white" />
+      <rect x="290" y="140" width="24" height="80" rx="4" fill="white" />
+    </g>
+  
+  </g>
+  <text x="48" y="420" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="white" opacity="0.95">Painel Financeiro</text>
+  <text x="48" y="448" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.75)">Sample project cover — replace in /public/projects</text>
+</svg>
