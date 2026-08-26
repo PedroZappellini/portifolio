@@ -24,7 +24,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`text-sm sm:text-base rounded-full cursor-pointer flex items-center justify-center ${variants[variant]} ${className}`}
+      className={`text-sm rounded-full cursor-pointer flex items-center justify-center transition-all duration-200 shrink-0 ${variants[variant]} ${className}`}
     >
       {name}
       {children}

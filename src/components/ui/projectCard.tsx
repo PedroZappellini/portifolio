@@ -10,14 +10,24 @@ interface ProjectCardProps {
   project: Project;
   locale: Locale;
   viewLabel: string;
+  openModal: (project: Project) => void;
+  closeModal: () => void;
 }
 
 const MAX_VISIBLE = 4;
 
-export function ProjectCard({ project, locale, viewLabel }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  locale,
+  viewLabel,
+  openModal,
+}: ProjectCardProps) {
   return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-surface-border bg-surface transition-colors hover:bg-surface-hover">
-      <button className="relative overflow-hidden block aspect-[5/3] w-full bg-accent-2">
+    <div className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-surface-border bg-surface transition-colors hover:bg-surface-hover">
+      <button
+        className="relative overflow-hidden block aspect-[5/3] w-full bg-accent-2 cursor-pointer"
+        onClick={() => openModal(project)}
+      >
         <Image
           src={project.cover}
           alt={""}
@@ -45,7 +55,10 @@ export function ProjectCard({ project, locale, viewLabel }: ProjectCardProps) {
           )}
         </div>
         <div className="mt-auto pt-5 border-t border-surface-border flex items-center justify-between">
-          <button className="text-sm sm:text-base text-accent">
+          <button
+            className="text-sm text-accent cursor-pointer"
+            onClick={() => openModal(project)}
+          >
             {viewLabel}
           </button>
           {project.repoUrl && (

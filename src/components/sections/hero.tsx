@@ -30,7 +30,7 @@ export function Hero() {
             </p>
           </div>
           <div className="flex flex-col gap-3 mt-5">
-            <p className="text-lg text-muted leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-muted leading-relaxed max-w-xl">
               {dict.hero.tagline}
             </p>
             <div className="flex items-center gap-2">
@@ -42,7 +42,7 @@ export function Hero() {
           </div>
           <div className="flex mt-8 gap-3">
             <Button
-              className="gap-3"
+              className="gap-2"
               variant="primary"
               name={dict.hero.ctaProjects}
               children={<ArrowRight size={16} />}

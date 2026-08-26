@@ -28,21 +28,21 @@ export function Header() {
       <div
         className={`lg:hidden absolute top-full left-0 w-full flex flex-col gap-4 border-b border-surface-border bg-background p-6 transition-all duration-300 ${isMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}
       >
-        <h1 className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
+        <p className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
           {dict.nav.about}
-        </h1>
-        <h1 className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
+        </p>
+        <p className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
           {dict.nav.projects}
-        </h1>
-        <h1 className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
+        </p>
+        <p className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
           {dict.nav.skills}
-        </h1>
-        <h1 className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
+        </p>
+        <p className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
           {dict.nav.resume}
-        </h1>
-        <h1 className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
+        </p>
+        <p className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
           {dict.nav.contact}
-        </h1>
+        </p>
       </div>
       <Container className="flex items-center justify-between h-16">
         <button
@@ -58,25 +58,25 @@ export function Header() {
             className={`absolute inset-0 transition-all duration-300 ${isMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-0"}`}
           />
         </button>
-        <h1 className="text-sm font-semibold text-foreground tracking-tight">
+        <p className="text-sm font-semibold text-foreground tracking-tight">
           Pedro Zappellini.
-        </h1>
+        </p>
         <div className="hidden lg:flex gap-10">
-          <h1 className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
+          <p className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
             {dict.nav.about}
-          </h1>
-          <h1 className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
+          </p>
+          <p className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
             {dict.nav.projects}
-          </h1>
-          <h1 className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
+          </p>
+          <p className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
             {dict.nav.skills}
-          </h1>
-          <h1 className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
+          </p>
+          <p className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
             {dict.nav.resume}
-          </h1>
-          <h1 className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
+          </p>
+          <p className="text-sm font-medium text-muted transition-colors hover:text-foreground cursor-pointer">
             {dict.nav.contact}
-          </h1>
+          </p>
         </div>
 
         <div className="flex gap-3">

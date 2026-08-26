@@ -4,11 +4,22 @@ import { Container } from "../layout/container";
 import { SectionHeading } from "../ui/sectionHeading";
 import { ProjectCard } from "../ui/projectCard";
 import { projects } from "@/src/utils/projects-data";
+import useModal from "@/src/Hooks/useModal";
+import { Modal } from "../ui/modal";
+import { Project } from "@/src/types/projects";
+import Image from "next/image";
+import { ProjectContent } from "../modalContents/projectContent";
 
 export function Projects() {
   const { dict, locale } = useLocale();
+  const { open, close, isOpen, data } = useModal<Project>();
   return (
     <section className="mt-30">
+      <Modal
+        isOpen={isOpen}
+        onClose={close}
+        children={data && <ProjectContent data={data} />}
+      />
       <Container>
         <SectionHeading
           align="left"
@@ -17,13 +28,18 @@ export function Projects() {
           subtitle={dict.projects.subtitle}
           goTo={dict.projects.allProjects}
         />
-        <div className="mt-8 flex overflow-x-auto scrollbar-hide gap-4 lg:grid lg:grid-cols-3 lg:overflow-visible">
+        <div className="mt-8 flex overflow-x-auto scrollbar-hide gap-4">
           {projects.slice(0, 3).map((project, index) => (
-            <div key={index} className="w-[85vw] w-72 shrink-0 lg:w-auto">
+            <div
+              key={index}
+              className="w-[70vw] max-w-xs shrink-0 lg:w-auto lg:max-w-none lg:grow lg:basis-[22rem]"
+            >
               <ProjectCard
                 project={project}
                 locale={locale}
                 viewLabel={dict.projects.viewProject}
+                openModal={() => open(project)}
+                closeModal={close}
               />
             </div>
           ))}

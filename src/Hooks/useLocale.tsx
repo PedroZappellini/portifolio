@@ -1,4 +1,3 @@
-"use client";
 import { useContext } from "react";
 import { LocaleContext } from "../contexts/contexts/locale-context";
 
