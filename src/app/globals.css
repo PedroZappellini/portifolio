@@ -14,7 +14,15 @@
   --accent-foreground: #ffffff;
   --success: #059669;
   --danger: #dc2626;
-  --ring: rgba(79, 70, 229, 0.35);
+  --ring: rgba(79, 70, 229, 0.5);
+  --skill-frontend-bg: #ede9fe;
+  --skill-frontend-icon: #7c3aed;
+  --skill-backend-bg: #dbeafe;
+  --skill-backend-icon: #2563eb;
+  --skill-data-bg: #d1fae5;
+  --skill-data-icon: #059669;
+  --skill-infra-bg: #ffedd5;
+  --skill-infra-icon: #ea580c;
 }
 
 [data-theme="dark"] {
@@ -32,6 +40,14 @@
   --success: #34d399;
   --danger: #f87171;
   --ring: rgba(99, 102, 241, 0.5);
+  --skill-frontend-bg: color-mix(in oklab, #8b5cf6 18%, transparent);
+  --skill-frontend-icon: #a78bfa;
+  --skill-backend-bg: color-mix(in oklab, #3b82f6 18%, transparent);
+  --skill-backend-icon: #60a5fa;
+  --skill-data-bg: color-mix(in oklab, #10b981 18%, transparent);
+  --skill-data-icon: #34d399;
+  --skill-infra-bg: color-mix(in oklab, #f97316 18%, transparent);
+  --skill-infra-icon: #fb923c;
 }
 
 @theme inline {
@@ -48,6 +64,14 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-success: var(--success);
   --color-danger: var(--danger);
+  --color-skill-frontend-bg: var(--skill-frontend-bg);
+  --color-skill-frontend-icon: var(--skill-frontend-icon);
+  --color-skill-backend-bg: var(--skill-backend-bg);
+  --color-skill-backend-icon: var(--skill-backend-icon);
+  --color-skill-data-bg: var(--skill-data-bg);
+  --color-skill-data-icon: var(--skill-data-icon);
+  --color-skill-infra-bg: var(--skill-infra-bg);
+  --color-skill-infra-icon: var(--skill-infra-icon);
   --font-sans:
     "Inter Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
 }

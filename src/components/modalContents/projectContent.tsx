@@ -48,7 +48,7 @@ export function ProjectContent({ data }: ProjectContent) {
         <div className="flex gap-2 overflow-x-auto scrollbar-hide mb-5">
           {data.tools.map((tool, index) => (
             <div key={index} className="shrink-0">
-              <SkillsBadge name={tool} />
+              <SkillsBadge name={tool.name} icon={tool.icon} />
             </div>
           ))}
         </div>

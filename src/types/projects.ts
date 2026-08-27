@@ -8,7 +8,7 @@ export interface Project {
   title: LocalizedText;
   summary: LocalizedText;
   description: LocalizedText;
-  tools: string[];
+  tools: { name: string; icon: React.ReactNode }[];
   cover: string;
   images: string[];
   video?: string;

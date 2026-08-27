@@ -7,7 +7,6 @@ import { projects } from "@/src/utils/projects-data";
 import useModal from "@/src/Hooks/useModal";
 import { Modal } from "../ui/modal";
 import { Project } from "@/src/types/projects";
-import Image from "next/image";
 import { ProjectContent } from "../modalContents/projectContent";
 
 export function Projects() {
@@ -28,20 +27,16 @@ export function Projects() {
           subtitle={dict.projects.subtitle}
           goTo={dict.projects.allProjects}
         />
-        <div className="mt-8 flex overflow-x-auto scrollbar-hide gap-4">
+        <div className="grid grid-flow-col auto-cols-[min(22rem,85%)] grid-rows-[auto_auto_auto_auto_auto] overflow-x-auto scrollbar-hide gap-4 mt-8">
           {projects.slice(0, 3).map((project, index) => (
-            <div
+            <ProjectCard
               key={index}
-              className="w-[70vw] max-w-xs shrink-0 lg:w-auto lg:max-w-none lg:grow lg:basis-[22rem]"
-            >
-              <ProjectCard
-                project={project}
-                locale={locale}
-                viewLabel={dict.projects.viewProject}
-                openModal={() => open(project)}
-                closeModal={close}
-              />
-            </div>
+              project={project}
+              locale={locale}
+              viewLabel={dict.projects.viewProject}
+              openModal={() => open(project)}
+              closeModal={close}
+            />
           ))}
         </div>
       </Container>

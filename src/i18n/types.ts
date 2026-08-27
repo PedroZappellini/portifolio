@@ -43,10 +43,45 @@ export interface ProjectDictionary {
   placeholderNote: string;
 }
 
+export interface SkillsDictionary {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  categories: {
+    icon: React.ReactNode;
+    backgroundColor: string;
+    name: string;
+    description: string;
+    items: { name: string; icon: React.ReactNode }[];
+  }[];
+}
+
+export interface ContactDictionary {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  nameLabel: string;
+  namePlaceholder: string;
+  emailLabel: string;
+  emailPlaceholder: string;
+  messageLabel: string;
+  messagePlaceholder: string;
+  submit: string;
+  submitting: string;
+  successTitle: string;
+  successBody: string;
+  errorTitle: string;
+  errorBody: string;
+  or: string;
+  directEmail: string;
+}
+
 export interface Dictionary {
   meta: { title: string; description: string };
   nav: NavDictionary;
   hero: HeroDictionary;
   about: AboutDictionary;
   projects: ProjectDictionary;
+  skills: SkillsDictionary;
+  contact: ContactDictionary;
 }
