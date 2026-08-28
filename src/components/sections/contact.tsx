@@ -3,14 +3,66 @@ import useLocale from "@/src/Hooks/useLocale";
 import { Container } from "../layout/container";
 import { SectionHeading } from "../ui/sectionHeading";
 import { Input } from "../ui/input";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
+import { ContactResponse, ContactType } from "@/src/types/contact";
+import { Loader2 } from "lucide-react";
+import { LAST_EMAIL_SENT_DATE } from "@/src/utils/constants";
+import { getItem, setItem } from "@/src/storage/storage";
 
 export function Contact() {
   const { dict } = useLocale();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<ContactType>("idle");
+  const [lastEmailSentDate, setLastEmailSentDate] = useState<Date | null>(null);
+
+  useEffect(() => {
+    setLastEmailSentDate(getLastEmailSentDate());
+  }, []);
+
+  function getLastEmailSentDate() {
+    const stored = getItem(LAST_EMAIL_SENT_DATE);
+
+    if (stored) {
+      return new Date(Number(stored));
+    }
+
+    return null;
+  }
+
+  async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const result: ContactResponse = await response.json();
+
+      setStatus(result.success ? "success" : "error");
+
+      if (result.success) {
+        setName("");
+        setEmail("");
+        setMessage("");
+
+        const date = Date.now();
+        setItem(LAST_EMAIL_SENT_DATE, date.toString());
+        setLastEmailSentDate(new Date(date));
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setTimeout(() => setStatus("idle"), 5000);
+    }
+  }
+
   return (
     <section className="mt-30">
       <Container>
@@ -21,16 +73,22 @@ export function Contact() {
           subtitle={dict.contact.subtitle}
         />
 
-        <div className="flex flex-col p-5 bg-surface border border-surface-border rounded-xl mt-8">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col p-5 bg-surface border border-surface-border rounded-xl mt-8"
+        >
           <div className="flex flex-col gap-4 sm:flex-row">
             <Input
               value={name}
+              required
               onChange={(e) => setName(e.target.value)}
               label={dict.contact.nameLabel}
               placeholder={dict.contact.namePlaceholder}
             />
             <Input
+              type="email"
               value={email}
+              required
               onChange={(e) => setEmail(e.target.value)}
               label={dict.contact.emailLabel}
               placeholder={dict.contact.emailPlaceholder}
@@ -48,14 +106,32 @@ export function Contact() {
               placeholder={dict.contact.messagePlaceholder}
             />
           </div>
-          <div className="mt-4">
+          <div className="flex flex-col sm:flex-row gap-4 mt-4 items-center">
             <Button
-              className="w-full sm:w-auto"
-              name={dict.contact.submit}
-              variant="primary"
-            />
+              type="submit"
+              className="w-full sm:w-[30%]"
+              variant={status === "success" ? "success" : "primary"}
+              name={
+                status === "loading"
+                  ? ""
+                  : status === "success"
+                    ? dict.contact.submitted
+                    : dict.contact.submit
+              }
+              disabled={status !== "idle"}
+            >
+              {status === "loading" && (
+                <Loader2 className="animate-spin" size={20} />
+              )}
+            </Button>
+            {lastEmailSentDate && (
+              <p className="text-sm text-muted">
+                {dict.contact.lastEmailSent}{" "}
+                {lastEmailSentDate.toLocaleDateString()}
+              </p>
+            )}
           </div>
-        </div>
+        </form>
         <div className="flex gap-1 justify-center mt-5">
           <p className="text-sm text-muted ">{dict.contact.or}</p>
           <p className="text-sm text-accent font-medium">

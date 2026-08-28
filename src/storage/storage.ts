@@ -1,0 +1,9 @@
+function setItem(key: string, value: string) {
+  localStorage.setItem(key, value);
+}
+
+function getItem(key: string) {
+  return localStorage.getItem(key);
+}
+
+export { setItem, getItem };

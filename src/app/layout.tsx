@@ -4,6 +4,7 @@ import "@fontsource-variable/inter";
 import { Header } from "../components/layout/header";
 import AppProvider from "../contexts/appProvider";
 import { Footer } from "../components/layout/footer";
+import { Toast } from "../components/ui/toast";
 
 export const metadata: Metadata = {
   title: "Create Next App",

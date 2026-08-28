@@ -137,6 +137,8 @@ export const pt: Dictionary = {
       "Conte um pouco sobre a oportunidade ou o motivo do contato...",
     submit: "Enviar mensagem",
     submitting: "Enviando...",
+    submitted: "Enviado!",
+    lastEmailSent: "Último email enviado em",
     successTitle: "Mensagem enviada!",
     successBody: "Obrigado pelo contato — vou responder o quanto antes.",
     errorTitle: "Algo deu errado",
@@ -144,5 +146,9 @@ export const pt: Dictionary = {
       "Não foi possível enviar sua mensagem agora. Tente novamente em instantes ou me chame diretamente por e-mail.",
     or: "ou",
     directEmail: "envie um e-mail direto",
+  },
+  errors: {
+    MISSING_FIELDS: "Alguns campos não foram preenchidos.",
+    SEND_FAILED: "O email não foi enviado devido a um erro.",
   },
 };

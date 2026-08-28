@@ -68,12 +68,19 @@ export interface ContactDictionary {
   messagePlaceholder: string;
   submit: string;
   submitting: string;
+  submitted: string;
+  lastEmailSent: string;
   successTitle: string;
   successBody: string;
   errorTitle: string;
   errorBody: string;
   or: string;
   directEmail: string;
+}
+
+export interface ErrorsDictionary {
+  MISSING_FIELDS: string;
+  SEND_FAILED: string;
 }
 
 export interface Dictionary {
@@ -84,4 +91,5 @@ export interface Dictionary {
   projects: ProjectDictionary;
   skills: SkillsDictionary;
   contact: ContactDictionary;
+  errors: ErrorsDictionary;
 }

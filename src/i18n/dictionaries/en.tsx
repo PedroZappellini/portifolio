@@ -143,6 +143,8 @@ export const en: Dictionary = {
       "Tell me a bit about the opportunity or why you're reaching out...",
     submit: "Send message",
     submitting: "Sending...",
+    submitted: "Sended",
+    lastEmailSent: "Last email sent on",
     successTitle: "Message sent!",
     successBody:
       "Thanks for reaching out — I'll get back to you as soon as I can.",
@@ -151,5 +153,9 @@ export const en: Dictionary = {
       "Couldn't send your message right now. Please try again shortly or reach me directly by email.",
     or: "or",
     directEmail: "send a direct email",
+  },
+  errors: {
+    MISSING_FIELDS: "Some fields were not filled in.",
+    SEND_FAILED: "Email was not sent due to an error.",
   },
 };
