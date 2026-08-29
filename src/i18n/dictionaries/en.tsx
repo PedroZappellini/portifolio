@@ -151,8 +151,8 @@ export const en: Dictionary = {
     errorTitle: "Something went wrong",
     errorBody:
       "Couldn't send your message right now. Please try again shortly or reach me directly by email.",
-    or: "or",
-    directEmail: "send a direct email",
+    needToShare: "Need to share more details or attachments?",
+    visitFullContact: "Visit the full contact page.",
   },
   errors: {
     MISSING_FIELDS: "Some fields were not filled in.",

@@ -9,6 +9,7 @@ import { ContactResponse, ContactType } from "@/src/types/contact";
 import { Loader2 } from "lucide-react";
 import { LAST_EMAIL_SENT_DATE } from "@/src/utils/constants";
 import { getItem, setItem } from "@/src/storage/storage";
+import Link from "next/link";
 
 export function Contact() {
   const { dict } = useLocale();
@@ -132,11 +133,13 @@ export function Contact() {
             )}
           </div>
         </form>
-        <div className="flex gap-1 justify-center mt-5">
-          <p className="text-sm text-muted ">{dict.contact.or}</p>
-          <p className="text-sm text-accent font-medium">
-            {dict.contact.directEmail}
-          </p>
+        <div className="flex flex-col sm:flex-row gap-1 justify-center mt-5">
+          <p className="text-sm text-muted ">{dict.contact.needToShare}</p>
+          <Link href={"/contact"}>
+            <p className="text-sm text-accent font-medium">
+              {dict.contact.visitFullContact}
+            </p>
+          </Link>
         </div>
       </Container>
     </section>

@@ -74,8 +74,8 @@ export interface ContactDictionary {
   successBody: string;
   errorTitle: string;
   errorBody: string;
-  or: string;
-  directEmail: string;
+  needToShare: string;
+  visitFullContact: string;
 }
 
 export interface ErrorsDictionary {

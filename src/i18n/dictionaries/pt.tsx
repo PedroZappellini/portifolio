@@ -144,8 +144,8 @@ export const pt: Dictionary = {
     errorTitle: "Algo deu errado",
     errorBody:
       "Não foi possível enviar sua mensagem agora. Tente novamente em instantes ou me chame diretamente por e-mail.",
-    or: "ou",
-    directEmail: "envie um e-mail direto",
+    needToShare: "Precisa compartilhar mais detalhes ou anexos?",
+    visitFullContact: "Acesse a página de contato completa.",
   },
   errors: {
     MISSING_FIELDS: "Alguns campos não foram preenchidos.",

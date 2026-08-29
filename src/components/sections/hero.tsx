@@ -42,6 +42,7 @@ export function Hero() {
           </div>
           <div className="flex mt-8 gap-3">
             <Button
+              href="/projects"
               className="gap-2"
               variant="primary"
               name={dict.hero.ctaProjects}

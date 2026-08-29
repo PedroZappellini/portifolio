@@ -25,7 +25,8 @@ export function Projects() {
           eyebrow={dict.projects.eyebrow}
           title={dict.projects.title}
           subtitle={dict.projects.subtitle}
-          goTo={dict.projects.allProjects}
+          goToTitle={dict.projects.allProjects}
+          goToHref="/projects"
         />
         <div className="grid grid-flow-col auto-cols-[min(22rem,85%)] grid-rows-[auto_auto_auto_auto_auto] overflow-x-auto scrollbar-hide gap-4 mt-8">
           {projects.slice(0, 3).map((project, index) => (

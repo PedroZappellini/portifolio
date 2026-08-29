@@ -3,7 +3,10 @@ export interface LocalizedText {
   en: string;
 }
 
+export type Category = "Website" | "Mobile" | "Automation" | "Other";
+
 export interface Project {
+  category: Category;
   slug: string;
   title: LocalizedText;
   summary: LocalizedText;
