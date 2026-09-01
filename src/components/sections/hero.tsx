@@ -48,7 +48,11 @@ export function Hero() {
               name={dict.hero.ctaProjects}
               children={<ArrowRight size={16} />}
             />
-            <Button variant="secondary" name={dict.hero.ctaContact} />
+            <Button
+              href="/contact"
+              variant="secondary"
+              name={dict.hero.ctaContact}
+            />
           </div>
         </div>
 

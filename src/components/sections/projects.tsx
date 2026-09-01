@@ -28,7 +28,7 @@ export function Projects() {
           goToTitle={dict.projects.allProjects}
           goToHref="/projects"
         />
-        <div className="grid grid-flow-col auto-cols-[82%] sm:auto-cols-[45%] lg:auto-cols-[31%] grid-rows-[auto_auto_auto_auto_auto] overflow-x-auto scrollbar-hide gap-4 mt-8">
+        <div className="grid grid-flow-col auto-cols-[82%] sm:auto-cols-[45%] lg:auto-cols-[31%] overflow-x-auto scrollbar-hide snap-x snap-mandatory sm:snap-none gap-4 mt-8">
           {projects.slice(0, 3).map((project, index) => (
             <ProjectCard
               key={index}

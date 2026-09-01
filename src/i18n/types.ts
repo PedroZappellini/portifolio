@@ -1,6 +1,7 @@
 export type Locale = "pt" | "en";
 
 export interface NavDictionary {
+  home: string;
   about: string;
   projects: string;
   skills: string;
@@ -35,7 +36,12 @@ export interface ProjectDictionary {
   subtitle: string;
   viewProject: string;
   allProjects: string;
-  filters: { projects: string; features: string; automations: string };
+  filters: {
+    all: string;
+    projects: string;
+    features: string;
+    automations: string;
+  };
   viewCode: string;
   viewDemo: string;
   close: string;

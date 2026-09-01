@@ -9,6 +9,7 @@ export const en: Dictionary = {
       "Portfolio of Pedro Zappellini Rohwedder, a Full Stack Developer specialized in React, React Native, Node.js and TypeScript.",
   },
   nav: {
+    home: "Home",
     about: "About",
     projects: "Projects",
     skills: "Stack",
@@ -69,9 +70,10 @@ export const en: Dictionary = {
     viewProject: "View details",
     allProjects: "All Projects",
     filters: {
+      all: "All",
       projects: "Projects",
       features: "Features",
-      automations: "Auitomations",
+      automations: "Automations",
     },
     viewCode: "View code",
     viewDemo: "View demo",

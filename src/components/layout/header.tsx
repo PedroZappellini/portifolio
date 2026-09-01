@@ -15,6 +15,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const links = [
+    { href: "/", label: dict.nav.home },
     { href: "/stack", label: dict.nav.skills },
     { href: "/projects", label: dict.nav.projects },
     { href: "/resume", label: dict.nav.resume },
@@ -36,12 +37,16 @@ export function Header() {
       className={`relative sticky top-0 z-50 flex transition-colors duration-300 ${scrolled ? "border-b border-surface-border bg-background/80 backdrop-blur-md" : "border-b border-transparent"}`}
     >
       <nav
-        className={`lg:hidden absolute top-full left-0 w-full flex flex-col gap-4 border-b border-surface-border bg-background p-6 transition-all duration-300 ${isMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}
+        className={`lg:hidden absolute top-full left-0 w-full flex flex-col gap-4 border-b border-surface-border bg-background p-6 transition-[transform,opacity] duration-300 ${isMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}
       >
         {links.map((link, index) => {
           const isActive = pathname === link.href;
           return (
-            <Link key={index} href={link.href}>
+            <Link
+              key={index}
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+            >
               <p
                 className={`text-sm font-medium ${isActive ? "text-accent" : "text-muted"} transition-colors hover:text-foreground cursor-pointer`}
               >
@@ -58,11 +63,11 @@ export function Header() {
         >
           <Menu
             size={20}
-            className={`transition-all duration-300 ${isMenuOpen ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"}`}
+            className={`transition-transform duration-300 ${isMenuOpen ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"}`}
           />
           <X
             size={20}
-            className={`absolute inset-0 transition-all duration-300 ${isMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-0"}`}
+            className={`absolute inset-0 transition-transform duration-300 ${isMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-0"}`}
           />
         </button>
         <Link href={"/"}>
@@ -87,13 +92,13 @@ export function Header() {
 
         <div className="flex gap-3">
           <button
-            className="rounded-full border border-surface-border bg-surface px-3 py-1.5 text-xs font-semibold text-muted transition-colors hover:text-foreground"
+            className="rounded-full border border-surface-border bg-surface px-3 py-1.5 text-xs font-semibold text-muted hover:text-foreground"
             onClick={toggleLocale}
           >
             {locale.toUpperCase()}
           </button>
           <button
-            className="rounded-full border border-surface-border bg-surface px-3 py-1.5 text-xs font-semibold text-muted transition-colors hover:text-foreground"
+            className="rounded-full border border-surface-border bg-surface px-3 py-1.5 text-xs font-semibold text-muted hover:text-foreground"
             onClick={toggleTheme}
           >
             {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}

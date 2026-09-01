@@ -60,7 +60,7 @@ export function ProjectCard({
             {viewLabel}
           </button>
           {project.repoUrl && (
-            <Link href={project.repoUrl}>
+            <Link href={project.repoUrl} target="_blank">
               <GithubIcon />
             </Link>
           )}

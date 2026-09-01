@@ -134,7 +134,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    category: "Other",
+    category: "Automation",
     slug: "api-automacao",
     title: {
       pt: "API de Automação de Processos",
