@@ -68,6 +68,11 @@ export const pt: Dictionary = {
       "Uma seleção de projetos que mostram como penso e construo — do planejamento à implementação.",
     viewProject: "Ver detalhes",
     allProjects: "Todos os projetos",
+    filters: {
+      projects: "Projetos",
+      features: "Funcionalidades",
+      automations: "Automações",
+    },
     viewCode: "Ver código",
     viewDemo: "Ver demo",
     close: "Fechar",

@@ -9,8 +9,14 @@ export default function Projects() {
   const { dict, locale } = useLocale();
   return (
     <Container className="pt-20">
-      <SectionHeading align="left" title="Projetos" subtitle="" />
-      <div className="grid grid-flow-col auto-cols-[min(22rem,85%)] grid-rows-[auto_auto_auto_auto_auto] overflow-x-auto scrollbar-hide gap-4 mt-8">
+      <SectionHeading align="left" title={dict.projects.title} subtitle="" />
+      <div
+        className="grid gap-4 mt-8
+    grid-flow-col auto-cols-[82%] auto-rows-[auto_auto_auto_auto_auto]
+    overflow-x-auto snap-x snap-mandatory
+    sm:grid-flow-row sm:grid-cols-2 sm:overflow-visible sm:snap-none
+    lg:grid-cols-3 scrollbar-hide"
+      >
         {projects.map((project, index) => (
           <ProjectCard
             key={index}

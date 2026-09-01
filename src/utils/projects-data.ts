@@ -3,7 +3,7 @@ import { tools } from "./tools";
 
 export const projects: Project[] = [
   {
-    category: "Website",
+    category: "Project",
     slug: "painel-financeiro",
     title: { pt: "Painel Financeiro (SaaS)", en: "Financial Dashboard (SaaS)" },
     summary: {
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    category: "Website",
+    category: "Project",
     slug: "app-delivery",
     title: {
       pt: "App de Delivery (React Native)",
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    category: "Mobile",
+    category: "Feature",
     slug: "api-automacao",
     title: {
       pt: "API de Automação de Processos",
@@ -134,7 +134,7 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    category: "Mobile",
+    category: "Other",
     slug: "api-automacao",
     title: {
       pt: "API de Automação de Processos",

@@ -35,6 +35,7 @@ export interface ProjectDictionary {
   subtitle: string;
   viewProject: string;
   allProjects: string;
+  filters: { projects: string; features: string; automations: string };
   viewCode: string;
   viewDemo: string;
   close: string;

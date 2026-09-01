@@ -23,7 +23,7 @@ export function ProjectCard({
   openModal,
 }: ProjectCardProps) {
   return (
-    <div className="group grid grid-rows-subgrid row-span-5 overflow-hidden rounded-2xl border border-surface-border bg-surface transition-colors hover:bg-surface-hover">
+    <div className="group grid grid-rows-subgrid row-span-5 min-w-0 overflow-hidden rounded-2xl border border-surface-border bg-surface transition-colors hover:bg-surface-hover snap-start">
       <button
         className="relative overflow-hidden block aspect-[5/3] w-full bg-accent-2 cursor-pointer"
         onClick={() => openModal(project)}
@@ -44,7 +44,7 @@ export function ProjectCard({
         <p className="text-sm text-muted line-clamp-3">
           {project.summary[locale]}
         </p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap content-start items-start gap-2">
           {project.tools.slice(0, MAX_VISIBLE).map((tool, index) => (
             <SkillsBadge key={index} name={tool.name} icon={tool.icon} />
           ))}

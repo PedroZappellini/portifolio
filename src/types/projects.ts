@@ -3,7 +3,7 @@ export interface LocalizedText {
   en: string;
 }
 
-export type Category = "Website" | "Mobile" | "Automation" | "Other";
+export type Category = "Project" | "Feature" | "Automation" | "Other";
 
 export interface Project {
   category: Category;
