@@ -95,7 +95,7 @@ export function Contact() {
               placeholder={dict.contact.emailPlaceholder}
             />
           </div>
-          <div className="mt-2 flex flex-col mt-4 gap-2">
+          <div className="flex flex-col mt-4 gap-2">
             <p className="text-sm text-foreground font-medium">
               {dict.contact.messageLabel}
             </p>
@@ -103,11 +103,11 @@ export function Contact() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               rows={5}
-              className="resize-none bg-background-elevated border border-surface-border rounded-xl py-2 px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[var(--ring)]"
+              className="resize-none bg-background-elevated border border-surface-border rounded-xl py-2 px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-(--ring)"
               placeholder={dict.contact.messagePlaceholder}
             />
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 mt-4 items-center">
+          <div className="flex flex-col sm:flex-row gap-4 mt-8 items-center">
             <Button
               type="submit"
               className="w-full sm:w-[30%]"
@@ -133,7 +133,7 @@ export function Contact() {
             )}
           </div>
         </form>
-        <div className="flex flex-col sm:flex-row gap-1 justify-center mt-5">
+        <div className="flex flex-col sm:flex-row gap-1 justify-center items-center mt-5">
           <p className="text-sm text-muted ">{dict.contact.needToShare}</p>
           <Link href={"/contact"}>
             <p className="text-sm text-accent font-medium">

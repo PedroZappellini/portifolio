@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import { Container } from "@/src/components/layout/container";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
@@ -6,7 +7,9 @@ import { SectionHeading } from "@/src/components/ui/sectionHeading";
 import useLocale from "@/src/Hooks/useLocale";
 import { ContactType } from "@/src/types/contact";
 import { Loader2, UploadCloud } from "lucide-react";
-import { useRef, useState } from "react";
+import { SelectedFile } from "@/src/components/ui/selectedFile";
+import { getItem } from "@/src/storage/storage";
+import { LAST_EMAIL_SENT_DATE } from "@/src/utils/constants";
 
 export default function Contact() {
   const { dict } = useLocale();
@@ -16,14 +19,53 @@ export default function Contact() {
   const [status, setStatus] = useState<ContactType>("idle");
   const [lastEmailSentDate, setLastEmailSentDate] = useState<Date | null>(null);
   const [files, setFiles] = useState<File[]>([]);
+  const [isPicking, setIsPicking] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const [previewUrls, setPreviewUrls] = useState<string[]>([]);
+
+  useEffect(() => {
+    const urls = files.map((file) =>
+      file.type.startsWith("image/") ? URL.createObjectURL(file) : "",
+    );
+    setPreviewUrls(urls);
+
+    return () => {
+      urls.forEach((url) => url && URL.revokeObjectURL(url));
+    };
+  }, [files]);
+
+  useEffect(() => {
+    setLastEmailSentDate(getLastEmailSentDate());
+  }, []);
+
+  useEffect(() => {
+    if (!isPicking) return;
+
+    function handleWindowFocus() {
+      setIsPicking(false);
+    }
+
+    window.addEventListener("focus", handleWindowFocus);
+    return () => window.removeEventListener("focus", handleWindowFocus);
+  }, [isPicking]);
+
+  function getLastEmailSentDate() {
+    const stored = getItem(LAST_EMAIL_SENT_DATE);
+
+    if (stored) {
+      return new Date(Number(stored));
+    }
+
+    return null;
+  }
 
   function handleSubmit() {}
 
   function handleSelectedFiles(e: React.ChangeEvent<HTMLInputElement>) {
     if (!e.target.files) return;
     const selectedFiles = Array.from(e.target.files);
-    setFiles(selectedFiles);
+    setFiles((previous) => [...previous, ...selectedFiles]);
   }
 
   return (
@@ -58,7 +100,7 @@ export default function Contact() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             rows={5}
-            className="resize-none bg-background-elevated border border-surface-border rounded-xl py-2 px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[var(--ring)]"
+            className="resize-none bg-background-elevated border border-surface-border rounded-xl py-2 px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-(--ring)"
             placeholder={dict.contact.messagePlaceholder}
           />
         </div>
@@ -70,27 +112,61 @@ export default function Contact() {
             ref={inputRef}
             type="file"
             multiple
-            accept="image/jpeg,image/png,image/webp,.pdf,.doc,.docx,.xls,.xlsx"
+            accept="image/jpeg,image/png,image/webp,.pdf,.doc,.docx,.xls,.xlsx,.txt"
             onChange={handleSelectedFiles}
             className="hidden"
           />
           <div
-            onClick={() => inputRef.current?.click()}
-            className={`group flex flex-col items-center justify-center w-full bg-surface border-surface-border [@media(hover:hover)]:hover:bg-accent/30 [@media(hover:hover)]:hover:border-accent [@media(hover:none)]:bg-accent/15 [@media(hover:none)]:border-accent border-2 border-dashed rounded-xl h-30 cursor-pointer transition-all active:scale-95 active:bg-accent/10`}
+            onClick={() => {
+              inputRef.current?.click();
+              setIsPicking(true);
+            }}
+            data-active={isPicking}
+            className={`group flex flex-col items-center justify-center w-full hover:bg-accent/30 hover:border-accent active:bg-accent/30 active:border-accent border-2 border-dashed rounded-xl h-30 cursor-pointer transition-all active:scale-95 ${
+              isPicking
+                ? "bg-accent/30 border-accent"
+                : "bg-surface border-surface-border"
+            }`}
           >
-            <UploadCloud
-              size={30}
-              className="text-muted [@media(hover:hover)]:group-hover:text-accent [@media(hover:none)]:text-accent"
-            />
-            <p className="text-sm font-medium text-muted [@media(hover:hover)]:group-hover:text-accent [@media(hover:none)]:text-accent">
-              clique para adicionar imagens
-            </p>
+            <div className="flex flex-col gap-2 items-center justify-center px-5">
+              <UploadCloud
+                size={30}
+                className={`${isPicking ? "text-accent" : "text-muted"} group-hover:text-accent group-active:text-accent`}
+              />
+              <p
+                className={`${isPicking ? "text-accent" : "text-muted"} text-center group-hover:text-accent group-active:text-accent`}
+              >
+                {dict.contact.fileInputPlaceholder}
+              </p>
+            </div>
           </div>
-          <p className="text-muted text-sm font-medium mt-4">
-            Envie ate no maximo 8mb
+          <p className="text-muted text-sm mb-4">
+            {dict.contact.maximumFileSize}
           </p>
+          <div className="flex flex-wrap gap-2">
+            {files.length > 0 &&
+              files.map((file, index) => {
+                const isImage = file.type.startsWith("image/");
+                const extension =
+                  file.name.split(".").pop()?.toLocaleLowerCase() ?? "";
+                return (
+                  <SelectedFile
+                    key={index}
+                    image={isImage}
+                    src={previewUrls[index]}
+                    alt={file.name}
+                    extension={extension}
+                    onRemove={() =>
+                      setFiles((previous) =>
+                        previous.filter((_, i) => i !== index),
+                      )
+                    }
+                  />
+                );
+              })}
+          </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 mt-4 items-center">
+        <div className="flex flex-col sm:flex-row gap-4 mt-8 items-center">
           <Button
             type="submit"
             className="w-full sm:w-[30%]"

@@ -148,6 +148,9 @@ export const en: Dictionary = {
     messageLabel: "Message",
     messagePlaceholder:
       "Tell me a bit about the opportunity or why you're reaching out...",
+    fileInputPlaceholder:
+      "Only .png, .jpeg, .pdf .docx, .xlsx, .txt files are allowed",
+    maximumFileSize: "The files must have maximum of 8MB",
     submit: "Send message",
     submitting: "Sending...",
     submitted: "Sended",

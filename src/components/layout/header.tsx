@@ -34,7 +34,7 @@ export function Header() {
 
   return (
     <header
-      className={`relative sticky top-0 z-50 flex transition-colors duration-300 ${scrolled ? "border-b border-surface-border bg-background/80 backdrop-blur-md" : "border-b border-transparent"}`}
+      className={`sticky top-0 z-50 flex transition-colors duration-300 ${scrolled ? "border-b border-surface-border bg-background/80 backdrop-blur-md" : "border-b border-transparent"}`}
     >
       <nav
         className={`lg:hidden absolute top-full left-0 w-full flex flex-col gap-4 border-b border-surface-border bg-background p-6 transition-[transform,opacity] duration-300 ${isMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}
@@ -81,7 +81,7 @@ export function Header() {
             return (
               <Link key={index} href={link.href}>
                 <p
-                  className={`text-sm font-medium ${isActive ? "text-accent/80" : "text-muted"} transition-colors ${isActive ? "hover:text-accent/100" : "hover:text-foreground"} cursor-pointer`}
+                  className={`text-sm font-medium ${isActive ? "text-accent/80" : "text-muted"} transition-colors ${isActive ? "hover:text-accent" : "hover:text-foreground"} cursor-pointer`}
                 >
                   {link.label}
                 </p>

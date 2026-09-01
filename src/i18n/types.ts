@@ -73,6 +73,8 @@ export interface ContactDictionary {
   emailPlaceholder: string;
   messageLabel: string;
   messagePlaceholder: string;
+  fileInputPlaceholder: string;
+  maximumFileSize: string;
   submit: string;
   submitting: string;
   submitted: string;

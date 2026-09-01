@@ -142,6 +142,9 @@ export const pt: Dictionary = {
     messageLabel: "Mensagem",
     messagePlaceholder:
       "Conte um pouco sobre a oportunidade ou o motivo do contato...",
+    fileInputPlaceholder:
+      "Apenas arquivos .png, .jpeg, .pdf .docx, .xlsx, .txt são permitidos",
+    maximumFileSize: "Os arquivos devem conter no maximo 8MB",
     submit: "Enviar mensagem",
     submitting: "Enviando...",
     submitted: "Enviado!",
