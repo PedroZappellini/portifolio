@@ -16,7 +16,7 @@ export function StackCard({
   iconBackgroundColor,
 }: StackCardProps) {
   return (
-    <div className="grid grid-rows-subgrid row-span-4 rounded-xl bg-surface border border-surface-border p-5">
+    <div className="grid grid-rows-subgrid snap-start row-span-4 rounded-xl bg-surface border border-surface-border p-5">
       <span
         className={`flex w-12 h-12 items-center justify-center rounded-xl bg-accent/10 ${iconBackgroundColor}`}
       >

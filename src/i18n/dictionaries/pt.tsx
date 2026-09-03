@@ -144,10 +144,11 @@ export const pt: Dictionary = {
       "Conte um pouco sobre a oportunidade ou o motivo do contato...",
     fileInputPlaceholder:
       "Apenas arquivos .png, .jpeg, .pdf .docx, .xlsx, .txt são permitidos",
-    maximumFileSize: "Os arquivos devem conter no maximo 8MB",
+    maximumFileSize: "Os arquivos devem conter no maximo 4MB",
     submit: "Enviar mensagem",
     submitting: "Enviando...",
-    submitted: "Enviado!",
+    submitted: "Enviado",
+    tryAgain: "Tente novamente",
     lastEmailSent: "Último email enviado em",
     successTitle: "Mensagem enviada!",
     successBody: "Obrigado pelo contato — vou responder o quanto antes.",
@@ -160,5 +161,6 @@ export const pt: Dictionary = {
   errors: {
     MISSING_FIELDS: "Alguns campos não foram preenchidos.",
     SEND_FAILED: "O email não foi enviado devido a um erro.",
+    maximumReached: "Tamanho total excede o limite de 4MB",
   },
 };

@@ -78,6 +78,7 @@ export interface ContactDictionary {
   submit: string;
   submitting: string;
   submitted: string;
+  tryAgain: string;
   lastEmailSent: string;
   successTitle: string;
   successBody: string;
@@ -90,6 +91,7 @@ export interface ContactDictionary {
 export interface ErrorsDictionary {
   MISSING_FIELDS: string;
   SEND_FAILED: string;
+  maximumReached: string;
 }
 
 export interface Dictionary {

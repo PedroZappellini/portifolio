@@ -150,10 +150,11 @@ export const en: Dictionary = {
       "Tell me a bit about the opportunity or why you're reaching out...",
     fileInputPlaceholder:
       "Only .png, .jpeg, .pdf .docx, .xlsx, .txt files are allowed",
-    maximumFileSize: "The files must have maximum of 8MB",
+    maximumFileSize: "The files must have maximum of 4MB",
     submit: "Send message",
     submitting: "Sending...",
     submitted: "Sended",
+    tryAgain: "Try again",
     lastEmailSent: "Last email sent on",
     successTitle: "Message sent!",
     successBody:
@@ -167,5 +168,6 @@ export const en: Dictionary = {
   errors: {
     MISSING_FIELDS: "Some fields were not filled in.",
     SEND_FAILED: "Email was not sent due to an error.",
+    maximumReached: "Total size exceeds the 4MB limit",
   },
 };

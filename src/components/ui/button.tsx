@@ -5,19 +5,21 @@ import { ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   name: string;
-  variant: Variant;
+  variant: ButtonVariant;
   children?: React.ReactNode;
   href?: string;
 }
+
 const variants = {
   primary:
     "bg-foreground text-background px-5 py-2.5 hover:opacity-90 active:opacity-80",
   secondary:
     "bg-surface text-foreground px-5 py-2.5 hover:bg-surface-hover border border-surface-border ",
   success: "bg-success transition-all px-5 py-2.5 text-white",
+  error: "bg-danger transition-all px-5 py-2.5 text-white",
 };
 
-type Variant = keyof typeof variants;
+export type ButtonVariant = keyof typeof variants;
 
 export function Button({
   name,
