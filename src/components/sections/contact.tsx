@@ -4,9 +4,9 @@ import { Container } from "../layout/container";
 import { SectionHeading } from "../ui/sectionHeading";
 import { Input } from "../ui/input";
 import { useEffect, useState } from "react";
-import { Button } from "../ui/button";
+import { Button, ButtonVariant } from "../ui/button";
 import { ContactResponse, ContactType } from "@/src/types/contact";
-import { Loader2 } from "lucide-react";
+import { CircleCheck, Loader2, RotateCcw } from "lucide-react";
 import { LAST_EMAIL_SENT_DATE } from "@/src/utils/constants";
 import { getItem, setItem } from "@/src/storage/storage";
 import Link from "next/link";
@@ -18,6 +18,28 @@ export function Contact() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<ContactType>("idle");
   const [lastEmailSentDate, setLastEmailSentDate] = useState<Date | null>(null);
+
+  const statusConfig: Record<
+    typeof status,
+    { variant: ButtonVariant; name: string; icon: React.ReactNode }
+  > = {
+    idle: { variant: "primary", name: dict.contact.submit, icon: null },
+    loading: {
+      variant: "primary",
+      name: "",
+      icon: <Loader2 className="animate-spin" size={20} />,
+    },
+    success: {
+      variant: "success",
+      name: dict.contact.submitted,
+      icon: <CircleCheck size={20} />,
+    },
+    error: {
+      variant: "error",
+      name: dict.contact.tryAgain,
+      icon: <RotateCcw size={20} />,
+    },
+  };
 
   useEffect(() => {
     setLastEmailSentDate(getLastEmailSentDate());
@@ -37,6 +59,8 @@ export function Contact() {
     e.preventDefault();
     setStatus("loading");
 
+    let finalStatus: "success" | "error" = "success";
+
     try {
       const response = await fetch("/api/contact/home", {
         method: "POST",
@@ -46,7 +70,8 @@ export function Contact() {
 
       const result: ContactResponse = await response.json();
 
-      setStatus(result.success ? "success" : "error");
+      finalStatus = result.success ? "success" : "error";
+      setStatus(finalStatus);
 
       if (result.success) {
         setName("");
@@ -59,8 +84,12 @@ export function Contact() {
       }
     } catch (error) {
       console.error(error);
+      finalStatus = "error";
+      setStatus("error");
     } finally {
-      setTimeout(() => setStatus("idle"), 5000);
+      if (finalStatus !== "error") {
+        setTimeout(() => setStatus("idle"), 5000);
+      }
     }
   }
 
@@ -103,6 +132,7 @@ export function Contact() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               rows={5}
+              required
               className="resize-none bg-background-elevated border border-surface-border rounded-xl py-2 px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-(--ring)"
               placeholder={dict.contact.messagePlaceholder}
             />
@@ -110,25 +140,17 @@ export function Contact() {
           <div className="flex flex-col sm:flex-row gap-4 mt-8 items-center">
             <Button
               type="submit"
-              className="w-full sm:w-[30%]"
-              variant={status === "success" ? "success" : "primary"}
-              name={
-                status === "loading"
-                  ? ""
-                  : status === "success"
-                    ? dict.contact.submitted
-                    : dict.contact.submit
-              }
-              disabled={status !== "idle"}
+              className="w-full sm:w-[30%] gap-2"
+              variant={statusConfig[status].variant}
+              name={statusConfig[status].name}
+              disabled={status === "loading" || status === "success"}
             >
-              {status === "loading" && (
-                <Loader2 className="animate-spin" size={20} />
-              )}
+              {statusConfig[status].icon}
             </Button>
             {lastEmailSentDate && (
               <p className="text-sm text-muted">
                 {dict.contact.lastEmailSent}{" "}
-                {lastEmailSentDate.toLocaleDateString()}
+                {lastEmailSentDate.toLocaleString()}
               </p>
             )}
           </div>

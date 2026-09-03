@@ -26,7 +26,6 @@ export default function Contact() {
   const [lastEmailSentDate, setLastEmailSentDate] = useState<Date | null>(null);
   const [fileEntries, setFileEntries] = useState<SelectedFileEntry[]>([]);
   const [isPicking, setIsPicking] = useState(false);
-  const [previewUrls, setPreviewUrls] = useState<string[]>([]);
   const [fileError, setFileError] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -275,8 +274,7 @@ export default function Contact() {
           </Button>
           {lastEmailSentDate && (
             <p className="text-sm text-muted">
-              {dict.contact.lastEmailSent}{" "}
-              {lastEmailSentDate.toLocaleDateString()}
+              {dict.contact.lastEmailSent} {lastEmailSentDate.toLocaleString()}
             </p>
           )}
         </div>
