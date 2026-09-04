@@ -23,7 +23,7 @@ export default function Projects() {
 
   return (
     <>
-      <Container className="pt-10">
+      <Container className="mt-10">
         <Modal
           isOpen={isOpen}
           onClose={close}

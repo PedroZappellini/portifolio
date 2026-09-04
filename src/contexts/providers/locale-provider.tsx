@@ -1,7 +1,7 @@
 "use client";
 import { PropsWithChildren, useState } from "react";
 import { LocaleContext } from "../contexts/locale-context";
-import { Locale } from "@/src/i18n/types";
+import { Locale } from "@/src/types/locale";
 import { dictionaries } from "@/src/i18n/dictionaries";
 
 export default function LocaleProvider({ children }: PropsWithChildren) {

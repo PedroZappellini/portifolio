@@ -50,6 +50,10 @@ export interface ProjectDictionary {
   placeholderNote: string;
 }
 
+export interface ResumeDictionary {
+  title: string;
+}
+
 export interface SkillsDictionary {
   eyebrow: string;
   title: string;
@@ -100,6 +104,7 @@ export interface Dictionary {
   hero: HeroDictionary;
   about: AboutDictionary;
   projects: ProjectDictionary;
+  resume: ResumeDictionary;
   skills: SkillsDictionary;
   contact: ContactDictionary;
   errors: ErrorsDictionary;

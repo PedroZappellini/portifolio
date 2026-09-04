@@ -15,6 +15,7 @@
   --success: #059669;
   --danger: #dc2626;
   --ring: rgba(79, 70, 229, 0.5);
+  --resume: #1f3a5f;
   --skill-frontend-bg: #ede9fe;
   --skill-frontend-icon: #7c3aed;
   --skill-backend-bg: #dbeafe;
@@ -40,6 +41,7 @@
   --success: #34d399;
   --danger: #f87171;
   --ring: rgba(99, 102, 241, 0.5);
+  --resume: #f87171;
   --skill-frontend-bg: color-mix(in oklab, #8b5cf6 18%, transparent);
   --skill-frontend-icon: #a78bfa;
   --skill-backend-bg: color-mix(in oklab, #3b82f6 18%, transparent);
@@ -64,6 +66,8 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-success: var(--success);
   --color-danger: var(--danger);
+  --color-ring: var(--ring);
+  --color-resume: var(--resume);
   --color-skill-frontend-bg: var(--skill-frontend-bg);
   --color-skill-frontend-icon: var(--skill-frontend-icon);
   --color-skill-backend-bg: var(--skill-backend-bg);
@@ -75,13 +79,6 @@
   --font-sans:
     "Inter Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 .mesh-gradient {
   background-image:

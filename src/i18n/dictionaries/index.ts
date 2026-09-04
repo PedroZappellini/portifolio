@@ -1,4 +1,4 @@
-import { Dictionary, Locale } from "../types";
+import { Dictionary, Locale } from "../../types/locale";
 import { pt } from "./pt";
 import { en } from "./en";
 

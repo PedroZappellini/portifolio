@@ -227,9 +227,7 @@ export default function Contact() {
               </p>
             </div>
           </div>
-          <p className="text-muted text-sm mb-4">
-            {dict.contact.maximumFileSize}
-          </p>
+          <p className="text-muted text-sm">{dict.contact.maximumFileSize}</p>
           <div className="flex flex-wrap gap-2">
             {fileEntries.length > 0 &&
               fileEntries.map(({ file, previewUrl }, index) => {

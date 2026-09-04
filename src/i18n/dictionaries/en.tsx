@@ -1,5 +1,5 @@
 import { Cloud, Database, MonitorSmartphone, Server } from "lucide-react";
-import { Dictionary } from "../types";
+import { Dictionary } from "../../types/locale";
 import { tools } from "@/src/utils/tools";
 
 export const en: Dictionary = {
@@ -61,6 +61,9 @@ export const en: Dictionary = {
         period: "Graduated 2024",
       },
     ],
+  },
+  resume: {
+    title: "Resume",
   },
   projects: {
     eyebrow: "Portfolio",

@@ -92,13 +92,13 @@ export function Header() {
 
         <div className="flex gap-3">
           <button
-            className="rounded-full border border-surface-border bg-surface px-3 py-1.5 text-xs font-semibold text-muted hover:text-foreground"
+            className="rounded-full border border-surface-border bg-surface px-3 py-1.5 text-xs font-semibold text-muted hover:text-foreground cursor-pointer"
             onClick={toggleLocale}
           >
             {locale.toUpperCase()}
           </button>
           <button
-            className="rounded-full border border-surface-border bg-surface px-3 py-1.5 text-xs font-semibold text-muted hover:text-foreground"
+            className="rounded-full border border-surface-border bg-surface px-3 py-1.5 text-xs font-semibold text-muted hover:text-foreground cursor-pointer"
             onClick={toggleTheme}
           >
             {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}

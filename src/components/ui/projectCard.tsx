@@ -1,5 +1,5 @@
 "use client";
-import { Locale } from "@/src/i18n/types";
+import { Locale } from "@/src/types/locale";
 import { Project } from "@/src/types/projects";
 import Image from "next/image";
 import { SkillsBadge } from "./skillsBadge";
@@ -25,7 +25,7 @@ export function ProjectCard({
   return (
     <div className="group grid grid-rows-subgrid row-span-5 min-w-0 overflow-hidden rounded-2xl border border-surface-border bg-surface transition-colors hover:bg-surface-hover snap-start">
       <button
-        className="relative overflow-hidden block aspect-[5/3] w-full bg-accent-2 cursor-pointer"
+        className="relative overflow-hidden block aspect-5/3 w-full bg-accent-2 cursor-pointer"
         onClick={() => openModal(project)}
       >
         <Image

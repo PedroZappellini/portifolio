@@ -1,5 +1,5 @@
 "use client";
-import { Dictionary, Locale } from "@/src/i18n/types";
+import { Dictionary, Locale } from "@/src/types/locale";
 import { createContext } from "react";
 
 interface LocaleContextType {
