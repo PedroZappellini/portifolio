@@ -28,6 +28,7 @@ export default function Projects() {
           isOpen={isOpen}
           onClose={close}
           children={data && <ProjectContent data={data} />}
+          closeButton
         />
         <SectionHeading align="left" title={dict.projects.title} subtitle="" />
         <div className="flex gap-2 mt-8 overflow-x-auto scrollbar-hide">

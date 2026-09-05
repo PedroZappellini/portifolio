@@ -2,9 +2,9 @@
 import { useState } from "react";
 
 export default function useModal<T>() {
-  const [data, setData] = useState<T | null>(null);
+  const [data, setData] = useState<T | null | undefined>(null);
 
-  const open = (item: T) => {
+  const open = (item?: T | null) => {
     setData(item);
   };
 

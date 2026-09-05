@@ -31,7 +31,7 @@ export const resumeData: ResumeData = {
       },
       {
         pt: "Ensino Médio — Colégio Visconde de Porto Seguro / Integral Escolas Inteligentes — Conclusão em 2024",
-        en: "High School — Colégio Visconde de Porto Seguro / Integral Escolas Inteligentes — Completed in 2024",
+        en: "High School — Colégio Visconde de Porto Seguro / Integral Escolas Inteligentes",
       },
     ],
   },

@@ -163,6 +163,10 @@ export const pt: Dictionary = {
     needToShare: "Precisa compartilhar mais detalhes ou anexos?",
     visitFullContact: "Acesse a página de contato completa.",
   },
+  email: {
+    title: "Escolha a opcao",
+    copy: "Copiar",
+  },
   errors: {
     MISSING_FIELDS: "Alguns campos não foram preenchidos.",
     SEND_FAILED: "O email não foi enviado devido a um erro.",

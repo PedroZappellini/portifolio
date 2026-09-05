@@ -94,6 +94,11 @@ export interface ContactDictionary {
   visitFullContact: string;
 }
 
+export interface EmailDictionary {
+  title: string;
+  copy: string;
+}
+
 export interface ErrorsDictionary {
   MISSING_FIELDS: string;
   SEND_FAILED: string;
@@ -109,5 +114,6 @@ export interface Dictionary {
   resume: ResumeDictionary;
   skills: SkillsDictionary;
   contact: ContactDictionary;
+  email: EmailDictionary;
   errors: ErrorsDictionary;
 }

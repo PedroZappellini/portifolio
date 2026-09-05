@@ -170,6 +170,10 @@ export const en: Dictionary = {
     needToShare: "Need to share more details or attachments?",
     visitFullContact: "Visit the full contact page.",
   },
+  email: {
+    title: "Choose between options",
+    copy: "Copy",
+  },
   errors: {
     MISSING_FIELDS: "Some fields were not filled in.",
     SEND_FAILED: "Email was not sent due to an error.",

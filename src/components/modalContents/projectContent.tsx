@@ -14,7 +14,7 @@ export function ProjectContent({ data }: ProjectContent) {
   const [coverImage, setCoverImage] = useState({ image: data.cover, index: 0 });
   return (
     <div>
-      <div className="relative aspect-[16/9] w-full overflow-hidden">
+      <div className="relative aspect-video w-full overflow-hidden">
         <Image
           src={coverImage.image}
           alt={""}

@@ -6,9 +6,10 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  closeButton?: boolean;
 }
 
-export function Modal({ onClose, children, isOpen }: ModalProps) {
+export function Modal({ onClose, children, isOpen, closeButton }: ModalProps) {
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
@@ -30,12 +31,14 @@ export function Modal({ onClose, children, isOpen }: ModalProps) {
   return (
     <div className="fixed inset-0 z-50 bg-black/50 flex backdrop-blur-md items-center justify-center p-4">
       <div className="relative min-w-0">
-        <button
-          className="absolute z-50 top-5 right-5 bg-black/50 rounded-full p-2 cursor-pointer transition-colors hover:bg-black/70"
-          onClick={onClose}
-        >
-          <X size={20} className="text-white" />
-        </button>
+        {closeButton && (
+          <button
+            className="absolute z-50 top-5 right-5 bg-black/50 rounded-full p-2 cursor-pointer transition-colors hover:bg-black/70"
+            onClick={onClose}
+          >
+            <X size={20} className="text-white" />
+          </button>
+        )}
 
         <div className="w-full max-w-xl bg-surface rounded-xl overflow-hidden">
           <div className="max-h-[90vh] overflow-y-auto">{children}</div>

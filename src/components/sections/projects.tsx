@@ -20,6 +20,7 @@ export function Projects() {
         isOpen={isOpen}
         onClose={close}
         children={data && <ProjectContent data={data} />}
+        closeButton
       />
       <Container>
         <SectionHeading
