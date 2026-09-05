@@ -27,7 +27,7 @@ export default function Resume() {
           />
         }
       />
-      <div className="flex flex-col gap-2 mt-8 bg-surface p-5 rounded-md max-w-3xl mx-auto border border-surface-border">
+      <div className="flex flex-col gap-2 mt-15 bg-surface p-5 rounded-md max-w-3xl mx-auto border border-surface-border">
         <h2 className="text-xl font-semibold text-resume">
           {resumeData.contactInfo.name}
         </h2>
