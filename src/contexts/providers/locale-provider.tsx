@@ -5,7 +5,7 @@ import { Locale } from "@/src/types/locale";
 import { dictionaries } from "@/src/i18n/dictionaries";
 
 export default function LocaleProvider({ children }: PropsWithChildren) {
-  const [locale, setLocale] = useState<Locale>("pt");
+  const [locale, setLocale] = useState<Locale>("en");
   const dict = dictionaries[locale];
 
   function toggleLocale() {

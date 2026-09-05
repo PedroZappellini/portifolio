@@ -7,7 +7,6 @@ import useLocale from "@/src/Hooks/useLocale";
 import { resumeData } from "@/src/utils/resume-data";
 import { Download } from "lucide-react";
 import Link from "next/link";
-import { useEffect } from "react";
 
 export default function Resume() {
   const { dict, locale } = useLocale();
