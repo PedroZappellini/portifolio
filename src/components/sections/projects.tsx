@@ -8,6 +8,8 @@ import useModal from "@/src/Hooks/useModal";
 import { Modal } from "../ui/modal";
 import { Project } from "@/src/types/projects";
 import { ProjectContent } from "../modalContents/projectContent";
+import { Button } from "../ui/button";
+import { ArrowRight } from "lucide-react";
 
 export function Projects() {
   const { dict, locale } = useLocale();
@@ -25,8 +27,14 @@ export function Projects() {
           eyebrow={dict.projects.eyebrow}
           title={dict.projects.title}
           subtitle={dict.projects.subtitle}
-          goToTitle={dict.projects.allProjects}
-          goToHref="/projects"
+          button={
+            <Button
+              name={dict.projects.allProjects}
+              variant="textOnly"
+              textOnlyHref="/projects"
+              children={<ArrowRight size={20} />}
+            />
+          }
         />
         <div className="grid grid-flow-col auto-cols-[82%] sm:auto-cols-[45%] lg:auto-cols-[31%] overflow-x-auto scrollbar-hide snap-x snap-mandatory sm:snap-none gap-4 mt-8">
           {projects.slice(0, 3).map((project, index) => (

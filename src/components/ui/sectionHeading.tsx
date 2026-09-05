@@ -8,8 +8,7 @@ interface SectionHeadingProps {
   eyebrow?: string;
   title: string;
   subtitle?: string;
-  goToTitle?: string;
-  goToHref?: string;
+  button?: React.ReactNode;
 }
 
 export function SectionHeading({
@@ -17,8 +16,7 @@ export function SectionHeading({
   eyebrow,
   title,
   subtitle,
-  goToTitle,
-  goToHref,
+  button,
 }: SectionHeadingProps) {
   return (
     <div className={`${align === "center" && "mx-auto text-center"}`}>
@@ -29,21 +27,11 @@ export function SectionHeading({
         </span>
       )}
 
-      <div
-        className={`mt-3 flex ${goToTitle && "justify-between items-center"}`}
-      >
+      <div className={`mt-3 flex ${button && "justify-between items-center"}`}>
         <h2 className="text-3xl max-w-2xl font-semibold tracking-tight text-foreground sm:text-4xl">
           {title}
         </h2>
-        {goToHref && (
-          <Link
-            href={goToHref}
-            className="text-base text-accent flex gap-2 items-center cursor-pointer"
-          >
-            <ArrowRight size={20} className="text-accent" />
-            {goToTitle}
-          </Link>
-        )}
+        {button && button}
       </div>
       {subtitle ? (
         <p className="max-w-2xl mt-4 text-base text-muted sm:text-lg">

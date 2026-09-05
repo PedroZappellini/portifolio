@@ -16,6 +16,7 @@
   --danger: #dc2626;
   --ring: rgba(79, 70, 229, 0.5);
   --resume: #1f3a5f;
+  --link: #1a73e8;
   --skill-frontend-bg: #ede9fe;
   --skill-frontend-icon: #7c3aed;
   --skill-backend-bg: #dbeafe;
@@ -42,6 +43,7 @@
   --danger: #f87171;
   --ring: rgba(99, 102, 241, 0.5);
   --resume: #f87171;
+  --link: #1a73e8;
   --skill-frontend-bg: color-mix(in oklab, #8b5cf6 18%, transparent);
   --skill-frontend-icon: #a78bfa;
   --skill-backend-bg: color-mix(in oklab, #3b82f6 18%, transparent);
@@ -68,6 +70,7 @@
   --color-danger: var(--danger);
   --color-ring: var(--ring);
   --color-resume: var(--resume);
+  --color-link: var(--link);
   --color-skill-frontend-bg: var(--skill-frontend-bg);
   --color-skill-frontend-icon: var(--skill-frontend-icon);
   --color-skill-backend-bg: var(--skill-backend-bg);

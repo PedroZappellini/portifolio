@@ -187,7 +187,7 @@ export default function Contact() {
             onChange={(e) => setMessage(e.target.value)}
             rows={5}
             required
-            className="resize-none bg-background-elevated border border-surface-border rounded-xl py-2 px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-(--ring)"
+            className="resize-none bg-background-elevated border border-surface-border rounded-xl py-2 px-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
             placeholder={dict.contact.messagePlaceholder}
           />
         </div>

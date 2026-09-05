@@ -6,7 +6,7 @@ export const resumeData: ResumeData = {
     phone: "+55 (19) 99889-0302",
     email: "pedrozappellini@gmail.com",
     location: "Campinas, SP",
-    linkedin: "linkedin.com/in/pedro-zappellini-rohwedder",
+    linkedin: "https://linkedin.com/in/pedro-zappellini-rohwedder",
     github: "https://github.com/PedroZappellini",
     title: {
       pt: "DESENVOLVEDOR FULL STACK JR.",

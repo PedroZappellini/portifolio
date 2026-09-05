@@ -64,6 +64,8 @@ export const pt: Dictionary = {
   },
   resume: {
     title: "Currículo",
+    downloadLabel: "Baixar PDF",
+    fileName: "currículo-pedro-zappellini.pdf",
   },
   projects: {
     eyebrow: "Portfólio",

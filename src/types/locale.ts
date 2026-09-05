@@ -52,6 +52,8 @@ export interface ProjectDictionary {
 
 export interface ResumeDictionary {
   title: string;
+  downloadLabel: string;
+  fileName: string;
 }
 
 export interface SkillsDictionary {
