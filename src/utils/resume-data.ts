@@ -15,7 +15,7 @@ export const resumeData: ResumeData = {
     stack: "React | React Native | Node.js | TypeScript",
     summaryTitle: {
       pt: "RESUMO DAS QUALIFICAÇÕES",
-      en: "RESUME OF QUALIFICATIONS",
+      en: "SUMMARY OF QUALIFICATIONS",
     },
     summary: {
       pt: "Desenvolvedor com experiência prática em React e React Native, e vivência como Analista de Sistemas em projetos de automação de processos, unindo levantamento de requisitos, comunicação com stakeholders e viabilidade técnica a uma visão de produto e negócio. Em aprofundamento contínuo em desenvolvimento full stack (Node.js, TypeScript, bancos de dados relacionais e não relacionais, arquitetura de software, Docker), com portfólio de projetos completos do design ao deploy em produção.",
@@ -174,7 +174,7 @@ export const resumeData: ResumeData = {
     items: [
       {
         language: { pt: "Inglês", en: "English" },
-        level: { pt: "Intermediário", en: "SpanIntermediateish" },
+        level: { pt: "Intermediário", en: "Intermediate" },
       },
       {
         language: { pt: "Espanhol", en: "Spanish" },

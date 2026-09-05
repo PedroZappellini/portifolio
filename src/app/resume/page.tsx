@@ -7,9 +7,11 @@ import useLocale from "@/src/Hooks/useLocale";
 import { resumeData } from "@/src/utils/resume-data";
 import { Download } from "lucide-react";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Resume() {
   const { dict, locale } = useLocale();
+
   return (
     <Container className="mt-10">
       <SectionHeading
@@ -21,7 +23,7 @@ export default function Resume() {
             variant="secondary"
             className="gap-2"
             download={dict.resume.fileName}
-            href="/resume.pdf"
+            href={`${locale}-resume.pdf`}
             children={<Download size={16} />}
           />
         }
@@ -110,7 +112,7 @@ export default function Resume() {
           <ResumeSection
             title={resumeData.experience.title[locale]}
             children={
-              <div className="flex flex-col gap-8 mt-2">
+              <div className="flex flex-col gap-8">
                 {resumeData.experience.items.map((item, index) => (
                   <div key={index} className="flex flex-col gap-2">
                     <div className="flex items-center gap-2 flex-wrap">
