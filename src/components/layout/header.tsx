@@ -3,7 +3,17 @@ import useLocale from "@/src/Hooks/useLocale";
 import useTheme from "@/src/Hooks/useTheme";
 import { useState, useEffect } from "react";
 import { Container } from "./container";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import {
+  FileUser,
+  FolderGit2,
+  Home,
+  Layers,
+  Mail,
+  Menu,
+  Moon,
+  Sun,
+  X,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -15,11 +25,15 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const links = [
-    { href: "/", label: dict.nav.home },
-    { href: "/stack", label: dict.nav.skills },
-    { href: "/projects", label: dict.nav.projects },
-    { href: "/resume", label: dict.nav.resume },
-    { href: "/contact", label: dict.nav.contact },
+    { href: "/", label: dict.nav.home, icon: Home },
+    { href: "/stack", label: dict.nav.skills, icon: Layers },
+    {
+      href: "/projects",
+      label: dict.nav.projects,
+      icon: FolderGit2,
+    },
+    { href: "/resume", label: dict.nav.resume, icon: FileUser },
+    { href: "/contact", label: dict.nav.contact, icon: Mail },
   ];
 
   useEffect(() => {
@@ -37,16 +51,24 @@ export function Header() {
       className={`sticky top-0 z-50 flex transition-colors duration-300 ${scrolled ? "border-b border-surface-border bg-background/80 backdrop-blur-md" : "border-b border-transparent"}`}
     >
       <nav
-        className={`lg:hidden absolute top-full left-0 w-full flex flex-col gap-4 border-b border-surface-border bg-background p-6 transition-[transform,opacity] duration-300 ${isMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0  pointer-events-none"}`}
+        className={`lg:hidden absolute top-full left-0 w-full flex flex-col gap-2 border-b border-surface-border bg-background p-6 transition-[translate,opacity] duration-300 ${isMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-5 pointer-events-none"}`}
       >
         {links.map((link, index) => {
           const isActive = pathname === link.href;
+          const Icon = link.icon;
           return (
             <Link
               key={index}
               href={link.href}
               onClick={() => setIsMenuOpen(false)}
+              className={`flex items-center gap-2 pl-3 py-3 ${
+                isActive ? "bg-accent/10 rounded-md" : "border-transparent"
+              }`}
             >
+              <Icon
+                size={16}
+                className={isActive ? "text-accent" : "text-muted"}
+              />
               <p
                 className={`text-sm font-medium ${isActive ? "text-accent" : "text-muted"} transition-colors hover:text-foreground cursor-pointer`}
               >

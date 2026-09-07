@@ -10,6 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string;
   textOnlyHref?: string;
   download?: boolean | string;
+  iconBefore?: boolean;
 }
 
 const variants = {
@@ -32,6 +33,7 @@ export function Button({
   href,
   textOnlyHref,
   download,
+  iconBefore,
   ...props
 }: ButtonProps) {
   if (href && download) {
@@ -73,8 +75,16 @@ export function Button({
       className={`text-sm rounded-full cursor-pointer flex items-center justify-center transition-all duration-200 shrink-0 ${variants[variant]} ${className}`}
       {...props}
     >
-      {name}
-      {children}
+      {iconBefore ? (
+        <>
+          {children}
+          {name}
+        </>
+      ) : (
+        <>
+          {name} {children}
+        </>
+      )}
     </button>
   );
 }

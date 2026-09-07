@@ -96,7 +96,10 @@ export interface ContactDictionary {
 
 export interface EmailDictionary {
   title: string;
+  description: string;
   copy: string;
+  copied: string;
+  openEmail: string;
 }
 
 export interface ErrorsDictionary {

@@ -165,7 +165,11 @@ export const pt: Dictionary = {
   },
   email: {
     title: "Escolha a opcao",
+    description:
+      "Feel free to reach out via email. I'll get back to you as soon as possible.",
     copy: "Copiar",
+    copied: "Copiado",
+    openEmail: "Open in email app",
   },
   errors: {
     MISSING_FIELDS: "Alguns campos não foram preenchidos.",

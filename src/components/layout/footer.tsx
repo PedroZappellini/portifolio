@@ -15,6 +15,7 @@ export function Footer() {
         isOpen={isOpen}
         onClose={close}
         children={<EmailOptionsContent />}
+        closeButton
       />
       <footer className="border-t border-surface-border mt-30">
         <Container className="flex flex-col items-center gap-6 py-10">
@@ -30,7 +31,7 @@ export function Footer() {
                 <LinkedinIcon />
               </button>
               <button
-                // onClick={() => open()}
+                onClick={() => open()}
                 className="w-10 h-10 rounded-full bg-surface border border-surface-border flex items-center justify-center cursor-pointer hover:bg-surface-hover"
               >
                 <Mail size={18} />

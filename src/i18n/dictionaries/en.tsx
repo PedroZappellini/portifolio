@@ -171,8 +171,12 @@ export const en: Dictionary = {
     visitFullContact: "Visit the full contact page.",
   },
   email: {
-    title: "Choose between options",
+    title: "Let's connect",
+    description:
+      "Feel free to reach out via email. I'll get back to you as soon as possible.",
     copy: "Copy",
+    copied: "Copied",
+    openEmail: "Open in email app",
   },
   errors: {
     MISSING_FIELDS: "Some fields were not filled in.",
