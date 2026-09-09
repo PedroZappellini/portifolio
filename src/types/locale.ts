@@ -108,6 +108,11 @@ export interface ErrorsDictionary {
   maximumReached: string;
 }
 
+export interface FooterDictionary {
+  reserved: string;
+  built: string;
+}
+
 export interface Dictionary {
   meta: { title: string; description: string };
   nav: NavDictionary;
@@ -118,5 +123,6 @@ export interface Dictionary {
   skills: SkillsDictionary;
   contact: ContactDictionary;
   email: EmailDictionary;
+  footer: FooterDictionary;
   errors: ErrorsDictionary;
 }

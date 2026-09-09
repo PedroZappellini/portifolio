@@ -57,7 +57,7 @@ export function ImageViewer({ image }: ImageProps) {
           onPointerUp={onPointerUp}
           onPointerCancel={onPointerCancel}
           onDragStart={(e) => e.preventDefault()}
-          className={scale > 1 ? "cursor-grab active:cursor-grabbing" : ""}
+          className={`touch-none ${scale > 1 ? "cursor-grab active:cursor-grabbing" : ""}`}
         >
           <Image
             src={image}

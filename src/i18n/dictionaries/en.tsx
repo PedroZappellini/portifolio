@@ -178,6 +178,10 @@ export const en: Dictionary = {
     copied: "Copied",
     openEmail: "Open in email app",
   },
+  footer: {
+    reserved: "© 2026 Pedro Zappellini. All rights reserved.",
+    built: "Built with Next.js, TypeScript and Tailwind CSS.",
+  },
   errors: {
     MISSING_FIELDS: "Some fields were not filled in.",
     SEND_FAILED: "Email was not sent due to an error.",
