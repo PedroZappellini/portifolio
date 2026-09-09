@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { SkillsBadge } from "../ui/skillsBadge";
 import useDragScroll from "@/src/Hooks/useDragScroll";
+import { ImageViewer } from "../ui/imageViewer";
 
 interface ProjectContent {
   data: Project;
@@ -19,14 +20,7 @@ export function ProjectContent({ data }: ProjectContent) {
   return (
     <div>
       <div className="relative aspect-video w-full overflow-hidden">
-        <Image
-          src={coverImage.image}
-          alt={""}
-          fill
-          loading="eager"
-          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover"
-        />
+        <ImageViewer image={coverImage.image} />
       </div>
       <div
         {...imagesDrag}

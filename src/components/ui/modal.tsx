@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { X } from "lucide-react";
+import useEscapeAndLockScroll from "@/src/Hooks/useEscapeAndLockScroll";
 
 interface ModalProps {
   isOpen: boolean;
@@ -10,21 +11,7 @@ interface ModalProps {
 }
 
 export function Modal({ onClose, children, isOpen, closeButton }: ModalProps) {
-  useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
-    };
-
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-      document.addEventListener("keydown", handleEscape);
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-      document.removeEventListener("keydown", handleEscape);
-    };
-  }, [isOpen]);
+  useEscapeAndLockScroll(isOpen, onClose);
 
   if (!isOpen) return null;
 

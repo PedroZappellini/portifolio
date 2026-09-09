@@ -2,13 +2,12 @@
 import { GithubIcon, LinkedinIcon } from "@/src/utils/icons";
 import { Container } from "./container";
 import { Mail } from "lucide-react";
-import { useState } from "react";
 import useModal from "@/src/Hooks/useModal";
 import { Modal } from "../ui/modal";
 import { EmailOptionsContent } from "../modalContents/emailOptionsContent";
 
 export function Footer() {
-  const { isOpen, close, data, open } = useModal();
+  const { isOpen, close, open } = useModal();
   return (
     <>
       <Modal
