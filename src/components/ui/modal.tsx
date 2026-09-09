@@ -33,10 +33,10 @@ export function Modal({ onClose, children, isOpen, closeButton }: ModalProps) {
       <div className="relative min-w-0">
         {closeButton && (
           <button
-            className="absolute z-50 top-5 right-5 bg-black/50 rounded-full p-2 cursor-pointer transition-colors hover:bg-black/70"
+            className="absolute z-50 -top-3 -right-3 rounded-full border border-surface-border bg-surface p-2 cursor-pointer shadow-sm transition-colors hover:bg-surface-border"
             onClick={onClose}
           >
-            <X size={20} className="text-white" />
+            <X size={20} className="text-muted" />
           </button>
         )}
 

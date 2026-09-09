@@ -20,14 +20,14 @@ export function EmailOptionsContent() {
   }
 
   return (
-    <div className="flex flex-col p-5">
+    <div className="flex flex-col p-5 gap-6">
       <div className="flex flex-col gap-2">
         <h2 className="text-2xl font-semibold text-foreground">
           {dict.email.title}
         </h2>
         <p className="text-sm text-muted">{dict.email.description}</p>
       </div>
-      <div className="mt-5 flex flex-col justify-between gap-5 bg-surface border border-surface-border w-full rounded-md py-2 px-3">
+      <div className="border border-surface-border w-full rounded-md py-2 px-3">
         <div className="flex items-center gap-3">
           <div className="border-r border-surface-border pr-5">
             <Mail size={20} className="self-center text-muted" />
@@ -40,12 +40,13 @@ export function EmailOptionsContent() {
       <Button
         name={copied ? dict.email.copied : dict.email.copy}
         variant={copied ? "success" : "primary"}
-        className="mt-4 gap-2"
+        className="gap-2"
         onClick={handleCopy}
         iconBefore={!copied}
+        disabled={copied}
         children={copied ? <Check size={20} /> : <Copy size={20} />}
-      ></Button>
-      <div className="flex items-center gap-3 border-t border-surface-border mt-8 pt-6 cursor-pointer">
+      />
+      <div className="flex items-center gap-3 border-t border-surface-border pt-6 cursor-pointer">
         <a
           href="mailto:pedrozappellini@gmail.com"
           className="text-sm text-accent"

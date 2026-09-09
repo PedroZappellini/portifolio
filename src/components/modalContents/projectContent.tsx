@@ -4,6 +4,7 @@ import { Project } from "@/src/types/projects";
 import Image from "next/image";
 import { useState } from "react";
 import { SkillsBadge } from "../ui/skillsBadge";
+import useDragScroll from "@/src/Hooks/useDragScroll";
 
 interface ProjectContent {
   data: Project;
@@ -12,6 +13,9 @@ interface ProjectContent {
 export function ProjectContent({ data }: ProjectContent) {
   const { locale, dict } = useLocale();
   const [coverImage, setCoverImage] = useState({ image: data.cover, index: 0 });
+  const imagesDrag = useDragScroll<HTMLDivElement>();
+  const toolsDrag = useDragScroll<HTMLDivElement>();
+
   return (
     <div>
       <div className="relative aspect-video w-full overflow-hidden">
@@ -24,7 +28,11 @@ export function ProjectContent({ data }: ProjectContent) {
           className="object-cover"
         />
       </div>
-      <div className="flex gap-3 px-8 py-4 border-b border-surface-border overflow-x-auto scrollbar-hide">
+      <div
+        {...imagesDrag}
+        onDragStart={(e) => e.preventDefault()}
+        className="flex gap-3 px-8 py-4 border-b border-surface-border overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing select-none"
+      >
         {data.images.map((image, index) => (
           <button
             key={index}
@@ -45,7 +53,10 @@ export function ProjectContent({ data }: ProjectContent) {
         <p className="text-xs text-muted-foreground font-semibold mb-2">
           {dict.projects.toolsUsed.toUpperCase()}
         </p>
-        <div className="flex gap-2 overflow-x-auto scrollbar-hide mb-5">
+        <div
+          className="flex gap-2 overflow-x-auto scrollbar-hide mb-5 cursor-grab active:cursor-grabbing select-none"
+          {...toolsDrag}
+        >
           {data.tools.map((tool, index) => (
             <div key={index} className="shrink-0">
               <SkillsBadge name={tool.name} icon={tool.icon} />
