@@ -23,18 +23,7 @@ export function Header() {
   const { dict, locale, toggleLocale } = useLocale();
   const { theme, toggleTheme } = useTheme();
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    function onScroll() {
-      setScrolled(window.scrollY > 8);
-    }
-    onScroll();
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const links = [
     { href: "/", label: dict.nav.home, icon: Home },
@@ -50,7 +39,9 @@ export function Header() {
 
   return (
     <header
-      className={`flex flex-col sticky top-0 z-50 ${scrolled ? "border-b border-surface-border bg-background/80 backdrop-blur-md" : ""}`}
+      className={
+        "flex flex-col sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-surface-border"
+      }
     >
       <Container className="h-16 flex items-center justify-between">
         <button
