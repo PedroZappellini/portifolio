@@ -1,4 +1,5 @@
-import { Skills } from "../types/skills";
+import { Cloud, Database, MonitorSmartphone, Server } from "lucide-react";
+import { SkillCategories, Skills } from "../types/skills";
 import {
   DockerIcon,
   ExpressIcon,
@@ -148,5 +149,65 @@ export const skills: Skills = {
       en: "Visual board for managing task flow.",
     },
     icon: "",
+  },
+};
+
+export const skillsCategory: SkillCategories = {
+  frontend: {
+    icon: <MonitorSmartphone size={20} className="text-skill-frontend-icon" />,
+    backgroundColor: "bg-skill-frontend-bg",
+    name: {
+      pt: "Front-end",
+      en: "Front-end",
+    },
+    description: {
+      pt: "Interfaces web e mobile focadas em experiência do usuário, usando React no navegador e React Native para aplicativos nativos, com TypeScript garantindo tipagem segura em todo o processo.",
+      en: "Web and mobile interfaces focused on user experience, using React in the browser and React Native for native apps, with TypeScript ensuring safe typing throughout.",
+    },
+    items: [
+      skills.react,
+      skills.reactNative,
+      skills.typescript,
+      skills.javascript,
+    ],
+  },
+  backend: {
+    icon: <Server size={20} className="text-skill-backend-icon" />,
+    backgroundColor: "bg-skill-backend-bg",
+    name: {
+      pt: "Back-end",
+      en: "Back-end",
+    },
+    description: {
+      pt: "Construção de APIs e serviços que sustentam a lógica de negócio das aplicações, com Node.js e Express expondo endpoints REST consumidos pelo front-end.",
+      en: "Building the APIs and services that power application logic, with Node.js and Express exposing REST endpoints consumed by the front-end.",
+    },
+    items: [skills.node, skills.express, skills.restApi],
+  },
+  data: {
+    icon: <Database size={20} className="text-skill-data-icon" />,
+    backgroundColor: "bg-skill-data-bg",
+    name: {
+      pt: "Dados",
+      en: "Data",
+    },
+    description: {
+      pt: "Modelagem, armazenamento e consulta de dados, combinando bancos relacionais (PostgreSQL) e não relacionais (MongoDB), com o Prisma facilitando o acesso ao banco de forma tipada.",
+      en: "Modeling, storing, and querying data by combining relational (PostgreSQL) and non-relational (MongoDB) databases, with Prisma providing type-safe database access.",
+    },
+    items: [skills.postgre, skills.prisma, skills.mongo],
+  },
+  infra: {
+    icon: <Cloud size={20} className="text-skill-infra-icon" />,
+    backgroundColor: "bg-skill-infra-bg",
+    name: {
+      pt: "Infraestrutura & Processo",
+      en: "Infrastructure & Process",
+    },
+    description: {
+      pt: "Práticas e ferramentas que dão suporte ao ciclo de desenvolvimento: versionamento com Git, containerização com Docker, automação de entregas via CI/CD, e metodologias ágeis para organizar o trabalho em equipe.",
+      en: "Practices and tools that support the development lifecycle: version control with Git, containerization with Docker, deployment automation via CI/CD, and agile methodologies for organizing teamwork.",
+    },
+    items: [skills.gitGithub, skills.docker, skills.scrum, skills.kanban],
   },
 };

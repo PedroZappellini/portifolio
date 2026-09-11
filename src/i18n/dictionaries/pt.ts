@@ -101,47 +101,6 @@ export const pt: Dictionary = {
       infra: "Infraestrutura",
     },
     usedInProjects: "Usado em",
-    categories: [
-      {
-        icon: (
-          <MonitorSmartphone size={20} className="text-skill-frontend-icon" />
-        ),
-        backgroundColor: "bg-skill-frontend-bg",
-        name: "Front-end",
-        description:
-          "Interfaces web e mobile focadas em experiência do usuário, usando React no navegador e React Native para aplicativos nativos, com TypeScript garantindo tipagem segura em todo o processo.",
-        items: [
-          skills.react,
-          skills.reactNative,
-          skills.typescript,
-          skills.javascript,
-        ],
-      },
-      {
-        icon: <Server size={20} className="text-skill-backend-icon" />,
-        backgroundColor: "bg-skill-backend-bg",
-        name: "Back-end",
-        description:
-          "Construção de APIs e serviços que sustentam a lógica de negócio das aplicações, com Node.js e Express expondo endpoints REST consumidos pelo front-end.",
-        items: [skills.node, skills.express, skills.restApi],
-      },
-      {
-        icon: <Database size={20} className="text-skill-data-icon" />,
-        backgroundColor: "bg-skill-data-bg",
-        name: "Dados",
-        description:
-          "Modelagem, armazenamento e consulta de dados, combinando bancos relacionais (PostgreSQL) e não relacionais (MongoDB), com o Prisma facilitando o acesso ao banco de forma tipada.",
-        items: [skills.postgre, skills.prisma, skills.mongo],
-      },
-      {
-        icon: <Cloud size={20} className="text-skill-infra-icon" />,
-        backgroundColor: "bg-skill-infra-bg",
-        name: "Infraestrutura & Processo",
-        description:
-          "Práticas e ferramentas que dão suporte ao ciclo de desenvolvimento: versionamento com Git, containerização com Docker, automação de entregas via CI/CD, e metodologias ágeis para organizar o trabalho em equipe.",
-        items: [skills.gitGithub, skills.docker, skills.scrum, skills.kanban],
-      },
-    ],
   },
   contact: {
     eyebrow: "Contato",

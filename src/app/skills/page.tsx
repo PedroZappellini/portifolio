@@ -9,7 +9,7 @@ import { skills } from "@/src/utils/skills-data";
 import { useState } from "react";
 
 export default function Stacks() {
-  const { dict, locale } = useLocale();
+  const { dict } = useLocale();
   const [activeCategory, setActiveCategory] = useState<Category>("All");
 
   const skillsArray = Object.values(skills);
@@ -57,13 +57,7 @@ export default function Stacks() {
       </div>
       <div className="mt-8 flex flex-col gap-4">
         {visibleSkills.map((skill, index) => (
-          <CompleteSkillsBadge
-            key={index}
-            name={skill.name}
-            icon={skill.icon}
-            description={skill.description[locale]}
-            category={skill.category}
-          />
+          <CompleteSkillsBadge key={index} skill={skill} />
         ))}
       </div>
     </Container>

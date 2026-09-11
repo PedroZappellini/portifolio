@@ -68,13 +68,6 @@ export interface SkillsDictionary {
     infra: string;
   };
   usedInProjects: string;
-  categories: {
-    icon: React.ReactNode;
-    backgroundColor: string;
-    name: string;
-    description: string;
-    items: { name: string; icon: React.ReactNode }[];
-  }[];
 }
 
 export interface ContactDictionary {

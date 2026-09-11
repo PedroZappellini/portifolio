@@ -101,53 +101,6 @@ export const en: Dictionary = {
       infra: "Infrastructure",
     },
     usedInProjects: "Used in",
-    categories: [
-      {
-        icon: (
-          <MonitorSmartphone size={20} className="text-skill-frontend-icon" />
-        ),
-        backgroundColor: "bg-skill-frontend-bg",
-        name: "Front-end",
-        description:
-          "Web and mobile interfaces focused on user experience, using React in the browser and React Native for native apps, with TypeScript ensuring safe typing throughout.",
-        items: [
-          skills.react,
-          skills.reactNative,
-          skills.typescript,
-          skills.javascript,
-        ],
-      },
-      {
-        icon: <Server size={20} className="text-skill-backend-icon" />,
-        backgroundColor: "bg-skill-backend-bg",
-        name: "Back-end",
-        description:
-          "Building the APIs and services that power application logic, with Node.js and Express exposing REST endpoints consumed by the front-end.",
-        items: [skills.node, skills.express, skills.restApi],
-      },
-      {
-        icon: <Database size={20} className="text-skill-data-icon" />,
-        backgroundColor: "bg-skill-data-bg",
-        name: "Data",
-        description:
-          "Modeling, storing, and querying data by combining relational (PostgreSQL) and non-relational (MongoDB) databases, with Prisma providing type-safe database access.",
-        items: [skills.postgre, skills.prisma, skills.mongo],
-      },
-      {
-        icon: <Cloud size={20} className="text-skill-infra-icon" />,
-        backgroundColor: "bg-skill-infra-bg",
-        name: "Infrastructure & Process",
-        description:
-          "Practices and tools that support the development lifecycle: version control with Git, containerization with Docker, deployment automation via CI/CD, and agile methodologies for organizing teamwork.",
-        items: [
-          skills.gitGithub,
-          skills.docker,
-          skills.gitGithub,
-          skills.scrum,
-          skills.kanban,
-        ],
-      },
-    ],
   },
   contact: {
     eyebrow: "Contact",

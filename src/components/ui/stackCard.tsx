@@ -8,7 +8,7 @@ interface StackCardProps {
   iconBackgroundColor: string;
 }
 
-export function StackCard({
+export function SkillsCard({
   icon,
   name,
   description,

@@ -29,3 +29,15 @@ export interface Skills {
   scrum: SkillContent;
   kanban: SkillContent;
 }
+
+export type SkillCategoryKey = "frontend" | "backend" | "data" | "infra";
+
+export interface SkillCategory {
+  icon: React.ReactNode;
+  backgroundColor: string;
+  name: LocalizedText;
+  description: LocalizedText;
+  items: SkillContent[];
+}
+
+export type SkillCategories = Record<SkillCategoryKey, SkillCategory>;

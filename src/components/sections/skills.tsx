@@ -2,11 +2,13 @@
 import useLocale from "@/src/Hooks/useLocale";
 import { Container } from "../layout/container";
 import { SectionHeading } from "../ui/sectionHeading";
-import { StackCard } from "../ui/stackCard";
+import { SkillsCard } from "../ui/stackCard";
 import { SkillsBadge } from "../ui/skillsBadge";
+import { skillsCategory } from "@/src/utils/skills-data";
 
 export function Skills() {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
+  const skillCategories = Object.values(skillsCategory);
   return (
     <section className="mt-30">
       <Container>
@@ -17,13 +19,13 @@ export function Skills() {
           subtitle={dict.skills.subtitle}
         />
         <div className="grid grid-flow-col auto-cols-[85%] snap-x snap-mandatory grid-rows-[auto_auto_auto_auto] overflow-x-auto scrollbar-hide sm:grid-flow-row sm:grid-cols-2 sm:grid-rows-[repeat(8,auto)] gap-4 mt-8">
-          {dict.skills.categories.map((category, index) => (
-            <StackCard
+          {skillCategories.map((category, index) => (
+            <SkillsCard
               key={index}
               icon={category.icon}
               iconBackgroundColor={category.backgroundColor}
-              name={category.name}
-              description={category.description}
+              name={category.name[locale]}
+              description={category.description[locale]}
               badges={category.items.map((item, index) => (
                 <SkillsBadge key={index} name={item.name} icon={item.icon} />
               ))}

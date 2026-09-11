@@ -4,13 +4,10 @@ import { projects } from "@/src/utils/projects-data";
 import { ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { ProjectsBadge } from "./projectsBadge";
-import { Category } from "@/src/types/skills";
+import { Category, SkillContent } from "@/src/types/skills";
 
 interface CompleteSkillsBadgeProps {
-  name: string;
-  icon: React.ReactNode;
-  description: string;
-  category: Category | Category[];
+  skill: SkillContent;
 }
 
 const categoryColors: Record<
@@ -18,23 +15,23 @@ const categoryColors: Record<
   { bg: string; text: string; icon: string }
 > = {
   Frontend: {
-    bg: "bg-violet-100",
-    text: "text-violet-700",
+    bg: "bg-skill-frontend-bg",
+    text: "text-skill-frontend-icon",
     icon: "bg-violet-200 text-violet-700",
   },
   Backend: {
-    bg: "bg-blue-100",
-    text: "text-blue-700",
+    bg: "bg-skill-backend-bg",
+    text: "text-skill-backend-icon",
     icon: "bg-blue-200 text-blue-700",
   },
   Data: {
-    bg: "bg-emerald-100",
-    text: "text-emerald-700",
+    bg: "bg-skill-data-bg",
+    text: "text-skill-data-icon",
     icon: "bg-emerald-200 text-emerald-700",
   },
   Infra: {
-    bg: "bg-amber-100",
-    text: "text-amber-700",
+    bg: "bg-skill-infra-bg",
+    text: "text-skill-infra-icon",
     icon: "bg-amber-200 text-amber-700",
   },
   All: {
@@ -44,17 +41,17 @@ const categoryColors: Record<
   },
 };
 
-export function CompleteSkillsBadge({
-  name,
-  icon,
-  description,
-  category,
-}: CompleteSkillsBadgeProps) {
+export function CompleteSkillsBadge({ skill }: CompleteSkillsBadgeProps) {
   const { dict, locale } = useLocale();
   const [isOpen, setIsOpen] = useState(false);
 
+  const { name, icon, description, category } = skill;
   const primaryCategory = Array.isArray(category) ? category[0] : category;
   const colors = categoryColors[primaryCategory];
+
+  const relatedProjects = projects.filter((project) =>
+    project.skills.includes(skill),
+  );
 
   return (
     <div className="w-full max-w-2xl h-auto rounded-xl bg-surface flex flex-col overflow-hidden border border-surface-border">
@@ -65,7 +62,7 @@ export function CompleteSkillsBadge({
         <p className={`text-sm ${colors.text}`}>{name}</p>
       </div>
       <div className="px-3 pt-2 flex flex-col gap-2">
-        <div className="mt-2 text-sm text-muted">{description}</div>
+        <div className="mt-2 text-sm text-muted">{description[locale]}</div>
         <button
           onClick={() => setIsOpen((state) => !state)}
           className="flex items-center justify-between border-t border-surface-border pt-2 cursor-pointer"
@@ -84,7 +81,7 @@ export function CompleteSkillsBadge({
         >
           <div className="overflow-hidden">
             <div className="flex flex-col gap-1.5 pt-2 pb-5">
-              {projects.map((project, index) => (
+              {relatedProjects.map((project, index) => (
                 <ProjectsBadge
                   key={index}
                   image={project.cover}
