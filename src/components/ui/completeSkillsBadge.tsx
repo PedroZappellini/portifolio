@@ -5,9 +5,11 @@ import { ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { ProjectsBadge } from "./projectsBadge";
 import { Category, SkillContent } from "@/src/types/skills";
+import { Project } from "@/src/types/projects";
 
 interface CompleteSkillsBadgeProps {
   skill: SkillContent;
+  onProjectClick: (project: Project) => void;
 }
 
 const categoryColors: Record<
@@ -41,7 +43,10 @@ const categoryColors: Record<
   },
 };
 
-export function CompleteSkillsBadge({ skill }: CompleteSkillsBadgeProps) {
+export function CompleteSkillsBadge({
+  skill,
+  onProjectClick,
+}: CompleteSkillsBadgeProps) {
   const { dict, locale } = useLocale();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -86,6 +91,7 @@ export function CompleteSkillsBadge({ skill }: CompleteSkillsBadgeProps) {
                   key={index}
                   image={project.cover}
                   title={project.title[locale]}
+                  onClick={() => onProjectClick(project)}
                 />
               ))}
             </div>

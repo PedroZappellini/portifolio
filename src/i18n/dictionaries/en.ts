@@ -1,6 +1,4 @@
-import { Cloud, Database, MonitorSmartphone, Server } from "lucide-react";
 import { Dictionary } from "../../types/locale";
-import { skills } from "@/src/utils/skills-data";
 
 export const en: Dictionary = {
   meta: {
@@ -101,6 +99,7 @@ export const en: Dictionary = {
       infra: "Infrastructure",
     },
     usedInProjects: "Used in",
+    seeProject: "See",
   },
   contact: {
     eyebrow: "Contact",

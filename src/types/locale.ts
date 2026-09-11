@@ -68,6 +68,7 @@ export interface SkillsDictionary {
     infra: string;
   };
   usedInProjects: string;
+  seeProject: string;
 }
 
 export interface ContactDictionary {

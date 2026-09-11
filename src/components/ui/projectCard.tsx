@@ -11,7 +11,6 @@ interface ProjectCardProps {
   locale: Locale;
   viewLabel: string;
   openModal: (project: Project) => void;
-  closeModal: () => void;
 }
 
 const MAX_VISIBLE = 4;

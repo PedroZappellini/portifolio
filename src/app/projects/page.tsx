@@ -61,7 +61,6 @@ export default function Projects() {
               locale={locale}
               viewLabel={dict.projects.viewProject}
               openModal={() => open(project)}
-              closeModal={close}
             />
           ))}
         </div>

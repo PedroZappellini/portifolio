@@ -1,15 +1,20 @@
 "use client";
 import { Container } from "@/src/components/layout/container";
+import { ProjectContent } from "@/src/components/modalContents/projectContent";
 import { CompleteSkillsBadge } from "@/src/components/ui/completeSkillsBadge";
+import { Modal } from "@/src/components/ui/modal";
 import { ProjectFilterButton } from "@/src/components/ui/projectFilterButton";
 import { SectionHeading } from "@/src/components/ui/sectionHeading";
 import useLocale from "@/src/Hooks/useLocale";
+import useModal from "@/src/Hooks/useModal";
+import { Project } from "@/src/types/projects";
 import { Category, SkillContent } from "@/src/types/skills";
 import { skills } from "@/src/utils/skills-data";
 import { useState } from "react";
 
 export default function Stacks() {
   const { dict } = useLocale();
+  const { open, close, isOpen, data } = useModal<Project>();
   const [activeCategory, setActiveCategory] = useState<Category>("All");
 
   const skillsArray = Object.values(skills);
@@ -26,6 +31,12 @@ export default function Stacks() {
 
   return (
     <Container className="mt-10">
+      <Modal
+        isOpen={isOpen}
+        onClose={close}
+        children={data && <ProjectContent data={data} />}
+        closeButton
+      />
       <SectionHeading align="left" title={dict.skills.title} />
 
       <div className="flex gap-2 mt-8 overflow-x-auto scrollbar-hide">
@@ -57,7 +68,11 @@ export default function Stacks() {
       </div>
       <div className="mt-8 flex flex-col gap-4">
         {visibleSkills.map((skill, index) => (
-          <CompleteSkillsBadge key={index} skill={skill} />
+          <CompleteSkillsBadge
+            key={index}
+            skill={skill}
+            onProjectClick={(project) => open(project)}
+          />
         ))}
       </div>
     </Container>
