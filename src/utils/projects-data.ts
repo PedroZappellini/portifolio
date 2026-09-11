@@ -1,5 +1,5 @@
 import { Project } from "../types/projects";
-import { tools } from "./tools";
+import { skills } from "./skills-data";
 
 export const projects: Project[] = [
   {
@@ -14,14 +14,14 @@ export const projects: Project[] = [
       pt: "Aplicação SaaS completa para pequenas empresas acompanharem receitas, despesas e fluxo de caixa em um único painel. O front-end em React/TypeScript consome uma API própria em Node.js/Express, com autenticação via JWT e dados persistidos em PostgreSQL através do Prisma. Inclui gráficos interativos, filtros por período e exportação de relatórios em PDF/CSV.",
       en: "A complete SaaS application for small businesses to track revenue, expenses and cash flow in a single dashboard. The React/TypeScript front-end consumes a custom Node.js/Express API, with JWT authentication and data persisted in PostgreSQL via Prisma. Includes interactive charts, date-range filters and PDF/CSV report exports.",
     },
-    tools: [
-      tools.react,
-      tools.typescript,
-      tools.node,
-      tools.express,
-      tools.postgre,
-      tools.prisma,
-      tools.docker,
+    skills: [
+      skills.react,
+      skills.typescript,
+      skills.node,
+      skills.express,
+      skills.postgre,
+      skills.prisma,
+      skills.docker,
     ],
     cover: "/projects/painel-financeiro-cover.svg",
     images: [
@@ -47,12 +47,12 @@ export const projects: Project[] = [
       pt: "Aplicativo mobile desenvolvido em React Native com TypeScript, focado em uma experiência de pedidos fluida: catálogo de produtos, carrinho persistente, acompanhamento do pedido em tempo real e notificações push. O back-end expõe uma API REST em Node.js consumida pelo app, com os dados de pedidos e catálogo armazenados em MongoDB.Aplicativo mobile desenvolvido em React Native com TypeScript, focado em uma experiência de pedidos fluida: catálogo de produtos, carrinho persistente, acompanhamento do pedido em tempo real e notificações push. O back-end expõe uma API REST em Node.js consumida pelo app, com os dados de pedidos e catálogo armazenados em MongoDB.Aplicativo mobile desenvolvido em React Native com TypeScript, focado em uma experiência de pedidos fluida: catálogo de produtos, carrinho persistente, acompanhamento do pedido em tempo real e notificações push. O back-end expõe uma API REST em Node.js consumida pelo app, com os dados de pedidos e catálogo armazenados em MongoDB.Aplicativo mobile desenvolvido em React Native com TypeScript, focado em uma experiência de pedidos fluida: catálogo de produtos, carrinho persistente, acompanhamento do pedido em tempo real e notificações push. O back-end expõe uma API REST em Node.js consumida pelo app, com os dados de pedidos e catálogo armazenados em MongoDB.Aplicativo mobile desenvolvido em React Native com TypeScript, focado em uma experiência de pedidos fluida: catálogo de produtos, carrinho persistente, acompanhamento do pedido em tempo real e notificações push. O back-end expõe uma API REST em Node.js consumida pelo app, com os dados de pedidos e catálogo armazenados em MongoDB.Aplicativo mobile desenvolvido em React Native com TypeScript, focado em uma experiência de pedidos fluida: catálogo de produtos, carrinho persistente, acompanhamento do pedido em tempo real e notificações push. O back-end expõe uma API REST em Node.js consumida pelo app, com os dados de pedidos e catálogo armazenados em MongoDB.",
       en: "Mobile app built with React Native and TypeScript, focused on a smooth ordering experience: product catalog, persistent cart, real-time order tracking and push notifications. The backend exposes a Node.js REST API consumed by the app, with order and catalog data stored in MongoDB.Mobile app built with React Native and TypeScript, focused on a smooth ordering experience: product catalog, persistent cart, real-time order tracking and push notifications. The backend exposes a Node.js REST API consumed by the app, with order and catalog data stored in MongoDB.Mobile app built with React Native and TypeScript, focused on a smooth ordering experience: product catalog, persistent cart, real-time order tracking and push notifications. The backend exposes a Node.js REST API consumed by the app, with order and catalog data stored in MongoDB.Mobile app built with React Native and TypeScript, focused on a smooth ordering experience: product catalog, persistent cart, real-time order tracking and push notifications. The backend exposes a Node.js REST API consumed by the app, with order and catalog data stored in MongoDB.Mobile app built with React Native and TypeScript, focused on a smooth ordering experience: product catalog, persistent cart, real-time order tracking and push notifications. The backend exposes a Node.js REST API consumed by the app, with order and catalog data stored in MongoDB.Mobile app built with React Native and TypeScript, focused on a smooth ordering experience: product catalog, persistent cart, real-time order tracking and push notifications. The backend exposes a Node.js REST API consumed by the app, with order and catalog data stored in MongoDB.",
     },
-    tools: [
-      tools.reactNative,
-      tools.typescript,
-      tools.node,
-      tools.restApi,
-      tools.mongo,
+    skills: [
+      skills.reactNative,
+      skills.typescript,
+      skills.node,
+      skills.restApi,
+      skills.mongo,
     ],
     cover: "/projects/app-delivery-cover.svg",
     images: [
@@ -86,12 +86,12 @@ export const projects: Project[] = [
       pt: "Serviço de back-end em Node.js/Express que orquestra fluxos de automação de tarefas repetitivas, inspirado em processos reais de automação (RPA) acompanhados na prática. Cada fluxo é modelado como uma sequência de etapas, processada em fila, com logs de execução persistidos em PostgreSQL. Containerizado com Docker e com pipeline de CI/CD via GitHub Actions.",
       en: "A Node.js/Express backend service that orchestrates automation workflows for repetitive tasks, inspired by real-world process automation (RPA) experience. Each workflow is modeled as a sequence of steps, processed through a queue, with execution logs persisted in PostgreSQL. Containerized with Docker and deployed through a GitHub Actions CI/CD pipeline.",
     },
-    tools: [
-      tools.node,
-      tools.express,
-      tools.postgre,
-      tools.docker,
-      tools.gitGithub,
+    skills: [
+      skills.node,
+      skills.express,
+      skills.postgre,
+      skills.docker,
+      skills.gitGithub,
     ],
     cover: "/projects/api-automacao-cover.svg",
     images: [
@@ -117,12 +117,12 @@ export const projects: Project[] = [
       pt: "Serviço de back-end em Node.js/Express que orquestra fluxos de automação de tarefas repetitivas, inspirado em processos reais de automação (RPA) acompanhados na prática. Cada fluxo é modelado como uma sequência de etapas, processada em fila, com logs de execução persistidos em PostgreSQL. Containerizado com Docker e com pipeline de CI/CD via GitHub Actions.",
       en: "A Node.js/Express backend service that orchestrates automation workflows for repetitive tasks, inspired by real-world process automation (RPA) experience. Each workflow is modeled as a sequence of steps, processed through a queue, with execution logs persisted in PostgreSQL. Containerized with Docker and deployed through a GitHub Actions CI/CD pipeline.",
     },
-    tools: [
-      tools.node,
-      tools.express,
-      tools.postgre,
-      tools.docker,
-      tools.gitGithub,
+    skills: [
+      skills.node,
+      skills.express,
+      skills.postgre,
+      skills.docker,
+      skills.gitGithub,
     ],
     cover: "/projects/api-automacao-cover.svg",
     images: [
@@ -148,12 +148,12 @@ export const projects: Project[] = [
       pt: "Serviço de back-end em Node.js/Express que orquestra fluxos de automação de tarefas repetitivas, inspirado em processos reais de automação (RPA) acompanhados na prática. Cada fluxo é modelado como uma sequência de etapas, processada em fila, com logs de execução persistidos em PostgreSQL. Containerizado com Docker e com pipeline de CI/CD via GitHub Actions.",
       en: "A Node.js/Express backend service that orchestrates automation workflows for repetitive tasks, inspired by real-world process automation (RPA) experience. Each workflow is modeled as a sequence of steps, processed through a queue, with execution logs persisted in PostgreSQL. Containerized with Docker and deployed through a GitHub Actions CI/CD pipeline.",
     },
-    tools: [
-      tools.node,
-      tools.express,
-      tools.postgre,
-      tools.docker,
-      tools.gitGithub,
+    skills: [
+      skills.node,
+      skills.express,
+      skills.postgre,
+      skills.docker,
+      skills.gitGithub,
     ],
     cover: "/projects/api-automacao-cover.svg",
     images: [
@@ -179,12 +179,12 @@ export const projects: Project[] = [
       pt: "Serviço de back-end em Node.js/Express que orquestra fluxos de automação de tarefas repetitivas, inspirado em processos reais de automação (RPA) acompanhados na prática. Cada fluxo é modelado como uma sequência de etapas, processada em fila, com logs de execução persistidos em PostgreSQL. Containerizado com Docker e com pipeline de CI/CD via GitHub Actions.",
       en: "A Node.js/Express backend service that orchestrates automation workflows for repetitive tasks, inspired by real-world process automation (RPA) experience. Each workflow is modeled as a sequence of steps, processed through a queue, with execution logs persisted in PostgreSQL. Containerized with Docker and deployed through a GitHub Actions CI/CD pipeline.",
     },
-    tools: [
-      tools.node,
-      tools.express,
-      tools.postgre,
-      tools.docker,
-      tools.gitGithub,
+    skills: [
+      skills.node,
+      skills.express,
+      skills.postgre,
+      skills.docker,
+      skills.gitGithub,
     ],
     cover: "/projects/api-automacao-cover.svg",
     images: [

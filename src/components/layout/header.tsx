@@ -27,7 +27,7 @@ export function Header() {
 
   const links = [
     { href: "/", label: dict.nav.home, icon: Home },
-    { href: "/stack", label: dict.nav.skills, icon: Layers },
+    { href: "/skills", label: dict.nav.skills, icon: Layers },
     {
       href: "/projects",
       label: dict.nav.projects,

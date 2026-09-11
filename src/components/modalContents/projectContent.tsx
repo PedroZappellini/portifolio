@@ -51,9 +51,9 @@ export function ProjectContent({ data }: ProjectContent) {
           className="flex gap-2 overflow-x-auto scrollbar-hide mb-5 cursor-grab active:cursor-grabbing select-none"
           {...toolsDrag}
         >
-          {data.tools.map((tool, index) => (
+          {data.skills.map((skill, index) => (
             <div key={index} className="shrink-0">
-              <SkillsBadge name={tool.name} icon={tool.icon} />
+              <SkillsBadge name={skill.name} icon={skill.icon} />
             </div>
           ))}
         </div>

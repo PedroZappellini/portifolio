@@ -45,11 +45,11 @@ export function ProjectCard({
           {project.summary[locale]}
         </p>
         <div className="flex flex-wrap content-start items-start gap-2">
-          {project.tools.slice(0, MAX_VISIBLE).map((tool, index) => (
-            <SkillsBadge key={index} name={tool.name} icon={tool.icon} />
+          {project.skills.slice(0, MAX_VISIBLE).map((skill, index) => (
+            <SkillsBadge key={index} name={skill.name} icon={skill.icon} />
           ))}
-          {project.tools.length - MAX_VISIBLE > 0 && (
-            <SkillsBadge name={`+${project.tools.length - MAX_VISIBLE}`} />
+          {project.skills.length - MAX_VISIBLE > 0 && (
+            <SkillsBadge name={`+${project.skills.length - MAX_VISIBLE}`} />
           )}
         </div>
         <div className="py-6 border-t border-surface-border flex items-center justify-between">

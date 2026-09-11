@@ -11,7 +11,7 @@ export interface Project {
   title: LocalizedText;
   summary: LocalizedText;
   description: LocalizedText;
-  tools: { name: string; icon: React.ReactNode }[];
+  skills: { name: string; icon: React.ReactNode }[];
   cover: string;
   images: string[];
   video?: string;

@@ -5,7 +5,7 @@ import { SectionHeading } from "../ui/sectionHeading";
 import { StackCard } from "../ui/stackCard";
 import { SkillsBadge } from "../ui/skillsBadge";
 
-export function Stack() {
+export function Skills() {
   const { dict } = useLocale();
   return (
     <section className="mt-30">

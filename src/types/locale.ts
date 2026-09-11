@@ -60,6 +60,14 @@ export interface SkillsDictionary {
   eyebrow: string;
   title: string;
   subtitle: string;
+  filters: {
+    all: string;
+    frontend: string;
+    backend: string;
+    data: string;
+    infra: string;
+  };
+  usedInProjects: string;
   categories: {
     icon: React.ReactNode;
     backgroundColor: string;

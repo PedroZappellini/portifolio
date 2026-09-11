@@ -17,7 +17,7 @@ export function About() {
           eyebrow={dict.about.eyebrow}
           title={dict.about.title}
         />
-        <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-[2fr_1fr]">
+        <div className="mt-8 grid grid-cols-1 gap-12 lg:grid-cols-[2fr_1fr]">
           <div>
             {dict.about.paragraphs.map((paragraph, index) => (
               <p

@@ -1,6 +1,6 @@
 import { Cloud, Database, MonitorSmartphone, Server } from "lucide-react";
 import { Dictionary } from "../../types/locale";
-import { tools } from "@/src/utils/tools";
+import { skills } from "@/src/utils/skills-data";
 
 export const pt: Dictionary = {
   meta: {
@@ -12,7 +12,7 @@ export const pt: Dictionary = {
     home: "Início",
     about: "Sobre",
     projects: "Projetos",
-    skills: "Stack",
+    skills: "Skills",
     contact: "Contato",
     resume: "Currículo",
   },
@@ -93,6 +93,14 @@ export const pt: Dictionary = {
     title: "Ferramentas que uso",
     subtitle:
       "Um stack full stack moderno, do front-end ao banco de dados, passando por infraestrutura e boas práticas de time.",
+    filters: {
+      all: "Todas",
+      frontend: "Frontend",
+      backend: "Backend",
+      data: "Dados",
+      infra: "Infraestrutura",
+    },
+    usedInProjects: "Usado em",
     categories: [
       {
         icon: (
@@ -103,10 +111,10 @@ export const pt: Dictionary = {
         description:
           "Interfaces web e mobile focadas em experiência do usuário, usando React no navegador e React Native para aplicativos nativos, com TypeScript garantindo tipagem segura em todo o processo.",
         items: [
-          tools.react,
-          tools.reactNative,
-          tools.typescript,
-          tools.javascript,
+          skills.react,
+          skills.reactNative,
+          skills.typescript,
+          skills.javascript,
         ],
       },
       {
@@ -115,7 +123,7 @@ export const pt: Dictionary = {
         name: "Back-end",
         description:
           "Construção de APIs e serviços que sustentam a lógica de negócio das aplicações, com Node.js e Express expondo endpoints REST consumidos pelo front-end.",
-        items: [tools.node, tools.express, tools.restApi],
+        items: [skills.node, skills.express, skills.restApi],
       },
       {
         icon: <Database size={20} className="text-skill-data-icon" />,
@@ -123,7 +131,7 @@ export const pt: Dictionary = {
         name: "Dados",
         description:
           "Modelagem, armazenamento e consulta de dados, combinando bancos relacionais (PostgreSQL) e não relacionais (MongoDB), com o Prisma facilitando o acesso ao banco de forma tipada.",
-        items: [tools.postgre, tools.prisma, tools.mongo],
+        items: [skills.postgre, skills.prisma, skills.mongo],
       },
       {
         icon: <Cloud size={20} className="text-skill-infra-icon" />,
@@ -131,7 +139,7 @@ export const pt: Dictionary = {
         name: "Infraestrutura & Processo",
         description:
           "Práticas e ferramentas que dão suporte ao ciclo de desenvolvimento: versionamento com Git, containerização com Docker, automação de entregas via CI/CD, e metodologias ágeis para organizar o trabalho em equipe.",
-        items: [tools.gitGithub, tools.docker, tools.scrum, tools.kanban],
+        items: [skills.gitGithub, skills.docker, skills.scrum, skills.kanban],
       },
     ],
   },
